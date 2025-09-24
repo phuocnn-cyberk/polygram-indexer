@@ -5,8 +5,8 @@ import Image from "next/image";
 
 export const ButtonGroup: FC = () => {
   return (
-    <div className={`flex items-center gap-x-4`}>
-      <Button className="bg-[#2172E6] text-white uppercase cursor-pointer hover:bg-[#2172E6] hover:shadow-[0_0_25px_0_rgba(33,114,230,0.5)] font-semibold h-12 transition-all duration-300">
+    <div className={`flex items-center gap-x-4 z-30`}>
+      <Button className="bg-[#2172E6] text-white z-50 uppercase cursor-pointer hover:bg-[#2172E6] hover:shadow-[0_0_25px_0_rgba(33,114,230,0.5)] font-semibold h-12 transition-all duration-300">
         <Image
           src="/assets/icons/get-started-icon.svg"
           alt="arrow right"

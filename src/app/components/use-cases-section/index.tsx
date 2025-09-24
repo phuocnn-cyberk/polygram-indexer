@@ -1,5 +1,7 @@
+"use client";
 import { FC } from "react";
 import { UseCaseCard } from "./components/use-case-card";
+import { motion } from "framer-motion";
 
 const USE_CASES_DATA = [
   {
@@ -65,16 +67,47 @@ const USE_CASES_DATA = [
 ];
 
 export const UseCasesSection: FC = () => {
+  const containerVariants = {
+    hidden: { opacity: 0 },
+    visible: {
+      opacity: 1,
+      transition: {
+        staggerChildren: 0.1,
+      },
+    },
+  };
+
+  const cardVariants = {
+    hidden: { opacity: 0, y: 20 },
+    visible: {
+      opacity: 1,
+      y: 0,
+      transition: {
+        duration: 0.5,
+      },
+    },
+  };
+
   return (
     <section className="mt-20 flex flex-col items-center">
       <h2 className="text-center text-4xl font-medium uppercase text-white max-w-3xl">
         Why Developers Choose Polygram for Blockchain Indexing
       </h2>
-      <div className="mt-12 flex flex-wrap justify-center gap-5 max-w-[1156px]">
+      <motion.div
+        className="mt-12 flex flex-wrap justify-center gap-5 max-w-[1156px]"
+        variants={containerVariants}
+        initial="hidden"
+        whileInView="visible"
+        viewport={{ once: true, amount: 0.2 }}
+      >
         {USE_CASES_DATA.map((useCase) => (
-          <UseCaseCard key={useCase.title} {...useCase} />
+          <UseCaseCard
+            key={useCase.title}
+            {...useCase}
+            variants={cardVariants}
+          />
         ))}
-      </div>
+      </motion.div>
     </section>
   );
 };

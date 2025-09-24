@@ -1,7 +1,7 @@
 import { FC } from "react";
 import Image from "next/image";
 
-import { ButtonGroup, PartnerLogos, Title } from "./components";
+import { ButtonGroup, FloatingIcons, PartnerLogos, Title } from "./components";
 
 export const HeroSection: FC = () => {
   return (
@@ -13,7 +13,8 @@ export const HeroSection: FC = () => {
         objectFit="cover"
         className="absolute top-0 left-0 w-full h-full z-0"
       />
-      <div className="z-20 flex flex-col items-center justify-center flex-grow gap-y-18">
+      <FloatingIcons />
+      <div className="flex flex-col items-center justify-center flex-grow gap-y-18">
         <Title />
         <ButtonGroup />
       </div>

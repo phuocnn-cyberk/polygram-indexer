@@ -1,5 +1,6 @@
 import Image from "next/image";
-import { FC } from "react";
+import { FC, forwardRef } from "react";
+import { motion, MotionProps } from "framer-motion";
 
 interface UseCaseCardProps {
   icon: string;
@@ -7,13 +8,16 @@ interface UseCaseCardProps {
   description: string;
 }
 
-export const UseCaseCard: FC<UseCaseCardProps> = ({
-  icon,
-  title,
-  description,
-}) => {
+export const UseCaseCard = forwardRef<
+  HTMLDivElement,
+  UseCaseCardProps & MotionProps
+>(({ icon, title, description, ...props }, ref) => {
   return (
-    <div className="w-[274px] rounded-2xl border border-[#262626] p-px">
+    <motion.div
+      ref={ref}
+      {...props}
+      className="w-[274px] rounded-2xl border border-[#262626] p-px"
+    >
       <div className="relative h-full w-full rounded-[15px] border border-transparent bg-transparent p-7">
         <div
           className="absolute inset-0 -z-10 rounded-[15px]"
@@ -35,6 +39,8 @@ export const UseCaseCard: FC<UseCaseCardProps> = ({
         <h3 className="mt-6 text-xl font-medium text-white">{title}</h3>
         <p className="mt-2 text-base text-[#6B6B6B]">{description}</p>
       </div>
-    </div>
+    </motion.div>
   );
-};
+});
+
+UseCaseCard.displayName = "UseCaseCard";

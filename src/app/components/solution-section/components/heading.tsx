@@ -2,9 +2,11 @@ import { FC } from "react";
 import Image from "next/image";
 
 const LOGOS = [
-  { src: "/assets/icons/eth.svg", alt: "Ethereum" },
-  { src: "/assets/icons/solana.svg", alt: "Solana" },
-  { src: "/assets/icons/binance.svg", alt: "Binance" },
+  { src: "/assets/icons/sol.svg", alt: "Solana" },
+  { src: "/assets/icons/aptos.svg", alt: "Aptos" },
+  { src: "/assets/icons/ethereum.svg", alt: "Ethereum" },
+  { src: "/assets/icons/binance-logo-white.svg", alt: "Binance" },
+  { src: "/assets/icons/base.svg", alt: "Base" },
 ];
 
 export const Heading: FC = () => {
@@ -17,9 +19,9 @@ export const Heading: FC = () => {
         {LOGOS.map(({ src, alt }) => (
           <div
             key={alt}
-            className="flex h-8 w-8 items-center justify-center rounded-full bg-[#1C1C1C]"
+            className="flex h-[50px] w-[50px] items-center justify-center rounded-full bg-[#1C1C1C]"
           >
-            <Image src={src} alt={alt} width={16} height={16} />
+            <Image src={src} alt={alt} width={32} height={32} />
           </div>
         ))}
       </div>
