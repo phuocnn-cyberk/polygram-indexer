@@ -1,11 +1,18 @@
 "use client";
 
 import { FC, useEffect, useRef, useState } from "react";
+import Link from "next/link";
 
-import { AlignJustify, X } from "lucide-react";
+import { AlignJustify } from "lucide-react";
 
 import { Logo } from "@/components/common/logo";
 import { Button } from "@/components/ui/button";
+import {
+  DropdownMenu,
+  DropdownMenuContent,
+  DropdownMenuItem,
+  DropdownMenuTrigger,
+} from "@/components/ui/dropdown-menu";
 
 import { MenuItem } from "./components";
 
@@ -33,12 +40,9 @@ const MENU_LIST = [
 ];
 
 export const Header: FC = () => {
-  const [isOpen, setIsOpen] = useState(false);
   const [show, setShow] = useState(true);
   const [isScrolled, setIsScrolled] = useState(false);
   const lastScrollY = useRef(0);
-
-  const onToggle = () => setIsOpen(!isOpen);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -68,9 +72,9 @@ export const Header: FC = () => {
 
   return (
     <header
-      className={`fixed top-0 left-0 z-50 w-full flex justify-between items-center px-12 py-2 transition-all duration-300 ${
+      className={`fixed top-0 left-0 z-50 w-full flex justify-between items-center px-4 py-2 transition-all duration-300 md:px-8 lg:px-12 ${
         show ? "translate-y-0" : "-translate-y-full"
-      } ${isScrolled ? "bg-none" : "bg-transparent"}`}
+      } ${isScrolled ? "bg-[#0A0A0A]" : "bg-transparent"}`}
     >
       <Logo />
       <div className="hidden lg:flex items-center">
@@ -84,29 +88,28 @@ export const Header: FC = () => {
         </nav>
       </div>
       <div className="lg:hidden">
-        <Button onClick={onToggle} variant="ghost" size="icon">
-          <AlignJustify />
-        </Button>
-      </div>
-      {isOpen && (
-        <div className="lg:hidden absolute top-0 left-0 w-full h-screen bg-black bg-opacity-50 flex justify-end">
-          <div className="w-1/2 h-screen bg-[#18181A] p-4">
-            <div className="flex justify-end">
-              <Button onClick={onToggle} variant="ghost" size="icon">
-                <X />
-              </Button>
-            </div>
-            <nav className="flex flex-col items-center gap-y-4 mt-8">
-              {MENU_LIST.map((item) => (
-                <MenuItem key={item.label}>{item.label}</MenuItem>
-              ))}
-              <Button className="bg-[#2172E6] font-bold text-white">
+        <DropdownMenu>
+          <DropdownMenuTrigger asChild>
+            <Button variant="ghost" size="icon">
+              <AlignJustify className="h-7 w-7 text-white" />
+            </Button>
+          </DropdownMenuTrigger>
+          <DropdownMenuContent className="mr-4 w-56 border-none bg-[#18181A] text-white">
+            {MENU_LIST.map((item) => (
+              <DropdownMenuItem key={item.label} asChild>
+                <Link href={item.path} className="w-full">
+                  {item.label}
+                </Link>
+              </DropdownMenuItem>
+            ))}
+            <DropdownMenuItem>
+              <Button className="w-full bg-[#2172E6] font-bold text-white">
                 Get started
               </Button>
-            </nav>
-          </div>
-        </div>
-      )}
+            </DropdownMenuItem>
+          </DropdownMenuContent>
+        </DropdownMenu>
+      </div>
     </header>
   );
 };

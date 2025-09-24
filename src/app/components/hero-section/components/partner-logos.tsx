@@ -36,8 +36,8 @@ const LOGO_LIST = [
 
 export const PartnerLogos: FC = () => {
   return (
-    <div className="w-full inline-flex flex-nowrap overflow-hidden [mask-image:_linear-gradient(to_right,transparent_0,_black_128px,_black_calc(100%-200px),transparent_100%)]">
-      <ul className="flex items-center justify-center md:justify-start [&_li]:mx-8 [&_img]:max-w-none animate-scroll">
+    <div className="w-full inline-flex flex-nowrap overflow-hidden">
+      <ul className="flex items-center justify-center md:justify-start md:[&_li]:mx-4 [&_li]:mx-2 [&_img]:max-w-none animate-scroll">
         {LOGO_LIST.map((logo) => (
           <li key={logo.alt}>
             <Image
@@ -45,13 +45,13 @@ export const PartnerLogos: FC = () => {
               alt={logo.alt}
               width={logo.width}
               height={logo.height}
-              className="object-contain"
+              className="object-contain md:h-20 h-12 max-md:w-20"
             />
           </li>
         ))}
       </ul>
       <ul
-        className="flex items-center justify-center md:justify-start [&_li]:mx-8 [&_img]:max-w-none animate-scroll"
+        className="flex items-center justify-center md:justify-start md:[&_li]:mx-4 [&_li]:mx-2 [&_img]:max-w-none animate-scroll"
         aria-hidden="true"
       >
         {LOGO_LIST.map((logo) => (
@@ -61,7 +61,7 @@ export const PartnerLogos: FC = () => {
               alt={logo.alt}
               width={logo.width}
               height={logo.height}
-              className="object-contain"
+              className="object-contain md:h-20 h-12 max-md:w-20"
             />
           </li>
         ))}

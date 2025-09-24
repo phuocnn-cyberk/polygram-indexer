@@ -2,11 +2,14 @@ import { FC } from "react";
 
 export const Title: FC = () => {
   return (
-    <h1
-      className={`text-7xl font-medium uppercase text-white lg:max-w-[1164px] z-10`}
+    <div
+      className={`md:text-7xl text-xl font-medium uppercase text-white z-10`}
     >
-      The Fastest Blockchain Indexer Service for Real-Time, Reliable On-Chain
-      Data
-    </h1>
+      The Fastest Blockchain
+      <br />
+      Indexer Service for Real-
+      <br />
+      Time, Reliable On-Chain Data
+    </div>
   );
 };
