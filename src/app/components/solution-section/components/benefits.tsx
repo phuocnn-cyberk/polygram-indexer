@@ -1,6 +1,8 @@
+"use client";
 import { Dots } from "@/components/common/dots";
 import Image from "next/image";
 import { FC } from "react";
+import { motion } from "framer-motion";
 
 const BENEFITS_DATA = [
   {
@@ -27,13 +29,42 @@ const BENEFITS_DATA = [
 ];
 
 export const Benefits: FC = () => {
+  const containerVariants = {
+    hidden: { opacity: 0 },
+    visible: {
+      opacity: 1,
+      transition: {
+        staggerChildren: 0.3,
+        delayChildren: 0.2,
+      },
+    },
+  };
+
+  const cardVariants = {
+    hidden: { opacity: 0, y: 20 },
+    visible: {
+      opacity: 1,
+      y: 0,
+      transition: {
+        duration: 0.5,
+      },
+    },
+  };
+
   return (
-    <div className="mt-20 mb-16 grid grid-cols-3 gap-8">
+    <motion.div
+      className="mt-20 mb-16 grid grid-cols-3 gap-8"
+      variants={containerVariants}
+      initial="hidden"
+      whileInView="visible"
+      viewport={{ once: true, amount: 0.5 }}
+    >
       {BENEFITS_DATA.map(({ title, description, icon, glowColor }) => {
         return (
-          <div
+          <motion.div
             key={title}
             className="w-[364px] bg-gradient-to-b from-[#3A3A3A] to-[#1E1E1E] p-px"
+            variants={cardVariants}
           >
             <div className="h-full w-full bg-[#0A0A0A] p-[10px]">
               <div className="flex justify-between">
@@ -65,9 +96,9 @@ export const Benefits: FC = () => {
                 </p>
               </div>
             </div>
-          </div>
+          </motion.div>
         );
       })}
-    </div>
+    </motion.div>
   );
 };
