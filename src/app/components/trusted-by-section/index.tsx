@@ -9,7 +9,7 @@ const LOGOS = [
     height: 68,
   },
   {
-    src: "/assets/images/partner-logos/caladanloho.png",
+    src: "/assets/images/partner-logos/caladanloho-logo.png",
     alt: "Partner Logo 2",
     width: 128,
     height: 72,

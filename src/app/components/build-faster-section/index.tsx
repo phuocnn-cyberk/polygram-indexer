@@ -9,10 +9,10 @@ export const BuildFasterSection: FC = () => {
   return (
     <section className="relative mt-20 h-[800px] w-full">
       <Image
-        src="/assets/images/get-started-background.png"
+        src="/assets/images/build-faster-background.png"
         alt="Get Started Background"
-        layout="fill"
-        objectFit="cover"
+        fill
+        className="object-cover"
         priority
       />
       <div className="absolute inset-0 flex items-center justify-center gap-x-14">

@@ -7,7 +7,7 @@ export const HeroSection: FC = () => {
   return (
     <div className="relative flex flex-col items-center text-center h-[800px] overflow-hidden">
       <Image
-        src="/assets/hero-background.png"
+        src="/assets/images/hero-background.png"
         alt="Hero background"
         layout="fill"
         objectFit="cover"

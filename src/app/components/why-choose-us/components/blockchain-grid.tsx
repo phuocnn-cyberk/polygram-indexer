@@ -1,6 +1,6 @@
 import { FC } from "react";
 import Image from "next/image";
-import { Stripes } from ".";
+import { Stripes } from "@/components/common/stripes";
 
 const ICONS = [
   "binance",
