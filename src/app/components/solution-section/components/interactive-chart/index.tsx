@@ -23,7 +23,7 @@ export const InteractiveChart: FC = () => {
             <TabsTrigger
               key={tab.value}
               value={tab.value}
-              className="flex-1 rounded-none border-b border-[#212020] py-4 text-xs font-medium uppercase text-[#B5B2B2] data-[state=active]:rounded-t-3xl data-[state=active]:border-b-2 data-[state=active]:border-[#2172E6] data-[state=active]:bg-[#141415] data-[state=active]:text-white md:text-lg"
+              className="flex-1 cursor-pointer rounded-none border-b border-[#212020] py-4 text-xs font-medium uppercase text-[#B5B2B2] data-[state=active]:rounded-t-3xl data-[state=active]:border-b-2 data-[state=active]:border-[#2172E6] data-[state=active]:bg-[#141415] data-[state=active]:text-white md:text-lg"
             >
               {tab.label}
             </TabsTrigger>

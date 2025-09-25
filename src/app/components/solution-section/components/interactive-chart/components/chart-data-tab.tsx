@@ -73,7 +73,7 @@ const yAxisTicks = [204, 206, 208, 210, 212, 214, 216];
 export const ChartDataTab: FC = () => {
   return (
     <div>
-      <div className="flex items-start justify-between">
+      <div className="flex items-start justify-between max-md:gap-4">
         <div>
           <p className="text-sm md:text-lg text-[#8A8A8A]">SOL Price</p>
           <p className="font-satoshi text-2xl md:text-[32px] font-medium text-[#2172E6]">
@@ -82,7 +82,7 @@ export const ChartDataTab: FC = () => {
         </div>
         <TokenSelector />
       </div>
-      <div className="mt-4 h-80">
+      <div className="mt-4 h-[390px]">
         <ResponsiveContainer width="100%" height="100%">
           <AreaChart data={data}>
             <defs>

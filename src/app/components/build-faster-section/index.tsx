@@ -1,26 +1,46 @@
+"use client";
+
 import { Button } from "@/components/ui/button";
+import { useMediaQuery } from "@/hooks/use-media-query";
 import Image from "next/image";
-import { FC } from "react";
+import { FC, useEffect, useState } from "react";
 import { TestimonialCard } from "./components";
 
-const TESTIMONIALS_COUNT = 5;
-
 export const BuildFasterSection: FC = () => {
+  const isDesktop = useMediaQuery("(min-width: 768px)");
+  const testimonialsCount = isDesktop ? 5 : 4;
+
+  const [currentIndex, setCurrentIndex] = useState(0);
+
+  useEffect(() => {
+    setCurrentIndex(0);
+  }, [testimonialsCount]);
+
+  const handleNext = () => {
+    setCurrentIndex((prev) => (prev + 1) % testimonialsCount);
+  };
+
+  const handlePrevious = () => {
+    setCurrentIndex(
+      (prev) => (prev - 1 + testimonialsCount) % testimonialsCount
+    );
+  };
+
   return (
     <section className="relative mt-20 h-[800px] w-full">
       <Image
         src="/assets/images/build-faster-background.png"
         alt="Get Started Background"
         fill
-        className="object-cover"
+        className="object-cover hidden md:block"
         priority
       />
-      <div className="absolute inset-0 flex items-center justify-center gap-x-14">
-        <div className="max-w-md">
-          <h2 className="text-[40px] font-medium leading-tight uppercase text-white">
+      <div className="absolute inset-0 gap-y-10 md:gap-y-0 flex flex-col md:flex-row items-center justify-center gap-x-14">
+        <div className="max-w-md max-md:px-6">
+          <h2 className="text-xl md:text-[40px] font-medium leading-tight uppercase text-white">
             Build Faster with the Blockchain Indexer API Built for Developers
           </h2>
-          <p className="mt-6 text-xl text-[#6B6B6B] font-medium">
+          <p className="mt-6 text-xs md:text-xl text-[#6B6B6B] font-medium">
             Forget managing nodes, custom pipelines, and constant infrastructure
             headaches. With Polygram’s blockchain indexer service, you get
             low-latency, high-performance on-chain data in a single, easy-to-use
@@ -38,20 +58,41 @@ export const BuildFasterSection: FC = () => {
             </div>
           </Button>
         </div>
-        <div className="relative h-[650px] w-[700px]">
-          {Array.from({ length: TESTIMONIALS_COUNT }).map((_, index) => (
-            <div
-              key={index}
-              className="absolute"
-              style={{
-                top: `${index * 40}px`,
-                left: `${(TESTIMONIALS_COUNT - 1 - index) * 40}px`,
-                zIndex: index,
-              }}
-            >
-              <TestimonialCard />
-            </div>
-          ))}
+        <div className="flex flex-col items-center">
+          <div className="relative h-[495px] w-[360px] md:h-[650px] md:w-[700px]">
+            {Array.from({ length: testimonialsCount }).map((_, index) => {
+              const stackIndex =
+                testimonialsCount -
+                1 -
+                ((currentIndex - index + testimonialsCount) %
+                  testimonialsCount);
+
+              const top = isDesktop ? stackIndex * 40 : stackIndex * 20;
+              const left = isDesktop
+                ? (testimonialsCount - 1 - stackIndex) * 40
+                : `calc(50% - 150px + ${
+                    (testimonialsCount - 1 - stackIndex) * 20
+                  }px)`;
+
+              return (
+                <div
+                  key={index}
+                  className="absolute transition-all duration-300 ease-in-out"
+                  style={{
+                    top: `${top}px`,
+                    left: isDesktop ? `${left}px` : left,
+                    zIndex: stackIndex,
+                  }}
+                >
+                  <TestimonialCard
+                    showControls={stackIndex === testimonialsCount - 1}
+                    onNext={handleNext}
+                    onPrevious={handlePrevious}
+                  />
+                </div>
+              );
+            })}
+          </div>
         </div>
       </div>
     </section>

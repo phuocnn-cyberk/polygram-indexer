@@ -22,23 +22,23 @@ const HOLDER_DATA = Array.from({ length: 10 }, (_, i) => ({
 
 export const HoldersTable: FC = () => {
   return (
-    <div className="relative mt-6 max-h-[427px] overflow-y-auto">
+    <div className="relative mt-6 max-h-[374px] overflow-y-auto">
       <Table>
         <TableHeader className="sticky top-0 z-10 bg-[#141415]">
-          <TableRow className="border-b border-[#212020]">
-            <TableHead className="w-[63px] py-3 text-left text-base font-medium uppercase text-[#8A8A8A]">
+          <TableRow className="border-b border-[#212020] !h-11 py- hover:bg-transparent">
+            <TableHead className="w-[63px] text-left text-base font-medium uppercase text-[#8A8A8A]">
               Rank
             </TableHead>
-            <TableHead className="w-[291px] py-3 text-left text-base font-medium uppercase text-[#8A8A8A]">
+            <TableHead className="w-[291px] text-left text-base font-medium uppercase text-[#8A8A8A]">
               Holder
             </TableHead>
-            <TableHead className="w-[145px] py-3 text-left text-base font-medium uppercase text-[#8A8A8A]">
+            <TableHead className="w-[145px] text-left text-base font-medium uppercase text-[#8A8A8A]">
               Percentage
             </TableHead>
-            <TableHead className="w-[390px] py-3 text-left text-base font-medium uppercase text-[#8A8A8A]">
+            <TableHead className="w-[390px] text-left text-base font-medium uppercase text-[#8A8A8A]">
               Quantity
             </TableHead>
-            <TableHead className="w-auto py-3 text-right text-base font-medium uppercase text-[#8A8A8A]">
+            <TableHead className="w-auto text-right text-base font-medium uppercase text-[#8A8A8A]">
               Value USD
             </TableHead>
           </TableRow>
@@ -46,8 +46,11 @@ export const HoldersTable: FC = () => {
         <TableBody>
           {HOLDER_DATA.map((holder, index) => {
             return (
-              <TableRow key={index} className="border-b border-[#212020]">
-                <TableCell className="py-4">
+              <TableRow
+                key={index}
+                className="border-b border-[#212020] hover:bg-transparent h-12"
+              >
+                <TableCell className="py-3">
                   <div className="flex h-6 w-6 items-center justify-center rounded-full border border-[#262626]">
                     <span className="text-base font-medium text-[#888888]">
                       {index + 1}
