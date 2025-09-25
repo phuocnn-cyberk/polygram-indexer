@@ -61,16 +61,16 @@ const LOGOS = [
 export const TrustedBySection: FC = () => {
   return (
     <section className="mt-20 flex flex-col items-center">
-      <h2 className="text-center text-4xl font-medium uppercase text-white max-w-3xl">
+      <h2 className="text-center text-xl md:text-4xl font-medium uppercase text-white md:max-w-3xl">
         Trusted Blockchain Indexer Service for Industry Leaders
       </h2>
-      <p className="mt-6 text-center text-xl text-[#6B6B6B] max-w-2xl">
+      <p className="mt-6 text-center text-xs md:text-xl px-2 md:px-0 text-[#6B6B6B] md:max-w-2xl">
         Leading teams, startups, and enterprises rely on Polygram to power their
         applications. By offloading blockchain indexing to Polygram, they cut
         infrastructure costs, accelerate time-to-market, and focus on what
         matters most — building products users love.
       </p>
-      <div className="mt-12 flex flex-wrap justify-center items-center gap-8 max-w-5xl">
+      <div className="mt-8 md:mt-12 flex flex-wrap justify-center items-center gap-y-2 gap-x-8 md:gap-8 max-w-5xl">
         {LOGOS.map((logo) => (
           <Image
             key={logo.src}
@@ -78,10 +78,10 @@ export const TrustedBySection: FC = () => {
             alt={logo.alt}
             width={logo.width}
             height={logo.height}
-            className="object-contain"
+            className="object-contain max-md:h-10 max-md:w-auto"
           />
         ))}
-        <span className="text-[#F8F8F8] text-lg">and more+</span>
+        <span className="text-[#F8F8F8] text-xs md:text-lg">and more+</span>
       </div>
     </section>
   );

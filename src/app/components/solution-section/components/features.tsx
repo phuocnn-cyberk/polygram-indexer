@@ -10,17 +10,17 @@ const FEATURES_DATA = [
 
 export const Features: FC = () => {
   return (
-    <div className="mt-12 grid grid-cols-2 gap-4">
+    <div className="mt-4 md:mt-12 grid max-md:w-full grid-cols-2 gap-3 md:gap-4">
       {FEATURES_DATA.map((feature) => (
         <div
           key={feature}
-          className="flex h-[60px] w-[384px] items-center justify-between border border-[#2A2A2A] bg-transparent px-6"
+          className="flex py-3 items-center justify-between border border-[#2A2A2A] bg-transparent w-full md:w-[350px] px-1 md:px-3"
         >
-          <Dots variant="left" />
-          <span className="font-medium text-white uppercase text-lg">
+          <Dots variant="left" className="mb-2" />
+          <span className="font-medium text-white uppercase text-xs md:text-lg">
             {feature}
           </span>
-          <Dots variant="right" />
+          <Dots variant="right" className="mb-2" />
         </div>
       ))}
     </div>

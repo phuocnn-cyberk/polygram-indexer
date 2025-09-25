@@ -9,6 +9,10 @@ const michroma = Michroma({
 
 export const Logo: FC = () => {
   return (
-    <h1 className={`text-xl text-white ${michroma.className}`}>Polygram</h1>
+    <h1
+      className={`md:text-xl text-sm leading-tight text-white ${michroma.className}`}
+    >
+      Polygram
+    </h1>
   );
 };

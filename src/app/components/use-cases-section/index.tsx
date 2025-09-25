@@ -89,12 +89,12 @@ export const UseCasesSection: FC = () => {
   };
 
   return (
-    <section className="mt-20 flex flex-col items-center">
-      <h2 className="text-center text-4xl font-medium uppercase text-white max-w-3xl">
+    <section className="mt-8 md:mt-20 flex flex-col items-center">
+      <h2 className="text-center text-xl md:text-4xl font-medium uppercase text-white md:max-w-3xl">
         Why Developers Choose Polygram for Blockchain Indexing
       </h2>
       <motion.div
-        className="mt-12 flex flex-wrap justify-center gap-5 max-w-[1156px]"
+        className="mt-8 md:mt-12 flex flex-wrap justify-center gap-5 max-w-[1156px]"
         variants={containerVariants}
         initial="hidden"
         whileInView="visible"

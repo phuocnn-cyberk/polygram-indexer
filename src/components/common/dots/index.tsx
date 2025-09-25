@@ -18,11 +18,14 @@ const rightDots = [
   { top: 12, left: 12 },
 ];
 
-export const Dots: FC<{ variant: "left" | "right" }> = ({ variant }) => {
+export const Dots: FC<{ variant: "left" | "right"; className?: string }> = ({
+  variant,
+  className,
+}) => {
   const positions = variant === "left" ? leftDots : rightDots;
 
   return (
-    <div className="relative h-[15px] w-[15px]">
+    <div className={`relative h-3 w-3 md:h-[15px] md:w-[15px] ${className}`}>
       {positions.map((pos, index) => (
         <div
           key={index}

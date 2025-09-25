@@ -4,16 +4,16 @@ import { Stripes } from "@/components/common/stripes";
 
 export const Footer: FC = () => {
   return (
-    <footer className="relative w-full overflow-hidden h-[930px]">
+    <footer className="relative w-full overflow-hidden">
       <Image
         src="/assets/images/footer-bg.png"
         alt="Footer Background"
         fill
-        className="object-cover animate-slow-spin"
+        className="object-cover animate-slow-spin md:h-[930px] h-[413px]"
       />
-      <div className="relative z-10 flex h-full flex-col items-center gap-y-12">
-        <div className="pt-[192px] text-center">
-          <div className="text-[64px] leading-tight text-white">
+      <div className="relative z-10 flex flex-col items-center gap-y-12">
+        <div className="pt-38 md:pt-[192px] text-center">
+          <div className="text-2xl md:text-[64px] leading-tight text-white">
             Get started
             <br />
             <span>with Polygram in 5 minutes, </span>

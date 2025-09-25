@@ -48,10 +48,11 @@ export const Chart: FC = () => {
   const pathLength = useTransform(scrollYProgress, [0.1, 0.5], [0, 1]);
 
   return (
-    <div ref={ref} className="h-[196px] w-[685px]">
+    <div ref={ref} className="w-[345px] md:w-[685px]">
       <svg
-        width="685"
+        width="345"
         height="196"
+        className="w-[345px] h-[98px] md:w-[685px] md:h-[196px]"
         viewBox="0 0 685 196"
         fill="none"
         xmlns="http://www.w3.org/2000/svg"

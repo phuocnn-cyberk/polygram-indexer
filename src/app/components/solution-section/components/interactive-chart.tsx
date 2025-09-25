@@ -81,7 +81,7 @@ export const InteractiveChart: FC = () => {
           <button
             key={tab}
             onClick={() => setActiveTab(tab)}
-            className={`flex-1 border-b-2 py-4 text-lg font-medium uppercase ${
+            className={`flex-1 border-b-2 py-4 text-xs md:text-lg font-medium uppercase ${
               activeTab === tab
                 ? "border-[#2172E6] text-white"
                 : "border-[#212020] text-[#B5B2B2]"
@@ -91,11 +91,11 @@ export const InteractiveChart: FC = () => {
           </button>
         ))}
       </div>
-      <div className="p-6">
+      <div className="p-4 md:p-6">
         <div className="flex items-center justify-between">
           <div>
-            <p className="text-lg text-[#8A8A8A]">SOL Price</p>
-            <p className="font-satoshi text-[32px] font-medium text-[#2172E6]">
+            <p className="text-sm md:text-lg text-[#8A8A8A]">SOL Price</p>
+            <p className="font-satoshi text-2xl md:text-[32px] font-medium text-[#2172E6]">
               $213.56
             </p>
           </div>

@@ -53,7 +53,7 @@ export const Benefits: FC = () => {
 
   return (
     <motion.div
-      className="mt-20 mb-16 grid grid-cols-3 gap-8"
+      className="mt-4 md:mt-20 mb-8 md:mb-16 grid w-full lg:grid-cols-3 grid-cols-1 gap-4 md:gap-8"
       variants={containerVariants}
       initial="hidden"
       whileInView="visible"
@@ -63,7 +63,7 @@ export const Benefits: FC = () => {
         return (
           <motion.div
             key={title}
-            className="w-[364px] bg-gradient-to-b from-[#3A3A3A] to-[#1E1E1E] p-px"
+            className="lg:w-[364px] bg-gradient-to-b from-[#3A3A3A] to-[#1E1E1E] p-px"
             variants={cardVariants}
           >
             <div className="h-full w-full bg-[#0A0A0A] p-[10px]">
@@ -72,14 +72,14 @@ export const Benefits: FC = () => {
                 <Dots variant="right" />
               </div>
 
-              <div className="relative mt-2.5 overflow-hidden bg-[#131313] p-6 pt-0 h-[345px]">
+              <div className="relative mt-2.5 overflow-hidden bg-[#131313] p-6 md:h-[345px]">
                 <div
                   className="absolute -top-25 left-1/2 h-[200px] w-[200px] -translate-x-1/2 rounded-full opacity-50 blur-[100px]"
                   style={{
                     background: glowColor,
                   }}
                 />
-                <div className="mt-8">
+                <div>
                   <Image
                     src={icon}
                     alt={title}
@@ -88,10 +88,10 @@ export const Benefits: FC = () => {
                     className="h-16 w-16"
                   />
                 </div>
-                <h3 className="mt-12 text-2xl font-medium text-white max-w-[228px]">
+                <h3 className="mt-6 md:mt-12 text-lg md:text-2xl font-medium text-white md:max-w-[228px]">
                   {title}
                 </h3>
-                <p className="mt-3 font-300 text-lg text-[#8A8A8A]">
+                <p className="mt-3 font-300 text-sm md:text-lg text-[#8A8A8A]">
                   {description}
                 </p>
               </div>

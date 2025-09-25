@@ -5,16 +5,16 @@ import { ButtonGroup, FloatingIcons, PartnerLogos, Title } from "./components";
 
 export const HeroSection: FC = () => {
   return (
-    <div className="relative flex flex-col items-center text-center md:h-[800px] h-[450px] overflow-hidden">
+    <div className="relative flex flex-col items-center text-center md:h-[800px] h-[330px]">
       <Image
         src="/assets/images/hero-background.png"
         alt="Hero background"
         fill
         priority
-        className="absolute top-0 left-0 w-full h-full z-0 object-cover"
+        className="absolute top-0 left-0 w-full z-0 object-cover"
       />
       <FloatingIcons />
-      <div className="flex flex-col items-center justify-center flex-grow gap-y-18">
+      <div className="flex flex-col items-center md:pt-[210px] pt-[100px] md:pb-16 pb-6">
         <Title />
         <ButtonGroup />
       </div>
@@ -25,7 +25,7 @@ export const HeroSection: FC = () => {
           Blockchain Indexing Without the Headaches
         </span>
         <div className="w-px md:h-24 h-12 bg-gradient-to-b from-[#111111] via-[#999999] to-[#111111]" />
-        <div className="relative md:w-[900px] w-[150px] h-25 flex items-center justify-center">
+        <div className="relative md:w-[900px] w-[150px] flex items-center justify-center">
           <PartnerLogos />
           <div className="absolute inset-0 bg-gradient-to-r from-[#111111] via-transparent to-[#111111]" />
         </div>

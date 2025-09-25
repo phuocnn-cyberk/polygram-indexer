@@ -72,7 +72,7 @@ export const Header: FC = () => {
 
   return (
     <header
-      className={`fixed top-0 left-0 z-50 w-full flex justify-between items-center px-4 py-2 transition-all duration-300 md:px-8 lg:px-12 ${
+      className={`fixed top-0 left-0 z-50 w-full flex justify-between items-center px-4 md:py-2 py-1 transition-all duration-300 md:px-8 lg:px-12 ${
         show ? "translate-y-0" : "-translate-y-full"
       } ${isScrolled ? "bg-[#0A0A0A]" : "bg-transparent"}`}
     >
