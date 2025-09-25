@@ -94,7 +94,7 @@ export const UseCasesSection: FC = () => {
         Why Developers Choose Polygram for Blockchain Indexing
       </h2>
       <motion.div
-        className="mt-8 md:mt-12 flex flex-wrap justify-center gap-5 max-w-[1156px]"
+        className="mt-8 w-full max-w-[375px] md:max-w-[1156px] gap-5 overflow-x-auto md:mt-12 md:flex md:flex-wrap md:justify-center md:overflow-x-visible grid grid-flow-col grid-rows-2 pl-6 md:pl-0"
         variants={containerVariants}
         initial="hidden"
         whileInView="visible"

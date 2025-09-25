@@ -23,8 +23,8 @@ export const Footer: FC = () => {
         </div>
 
         <div className="w-full">
-          <div className="w-full border-y border-[#1E1E1E] xl:max-w-[1440px] mx-auto container">
-            <div className="grid w-full grid-cols-[1fr_auto_1fr]">
+          <div className="w-full border-y border-[#1E1E1E] xl:max-w-[1440px] mx-auto container px-0">
+            <div className="hidden md:grid w-full grid-cols-[1fr_auto_1fr]">
               <div className="grid h-full grid-rows-2">
                 <div className="border-b border-[#1E1E1E] border-l bg-[#111111]/50 backdrop-blur-xl" />
                 <div className="bg-[#111111]/50 backdrop-blur-xl border-l border-[#1E1E1E]" />
@@ -58,6 +58,34 @@ export const Footer: FC = () => {
               <div className="grid h-full grid-rows-2">
                 <div className="border-b border-[#1E1E1E] border-r bg-[#111111]/50 backdrop-blur-xl" />
                 <div className="bg-[#111111]/50 backdrop-blur-xl border-r border-[#1E1E1E]" />
+              </div>
+            </div>
+            <div className="w-full bg-[#111111]/50 backdrop-blur-xl md:hidden">
+              <div className="p-8 border-b border-[#1E1E1E]">
+                <p className="text-base text-[#929292]">
+                  Access real-time, enriched on-chain data without the hassle of
+                  running your own infrastructure. Our blockchain indexer API
+                  delivers low-latency, accurate, and developer-ready data —
+                  from pricing and historical transactions to token holders,
+                  liquidity, and wallet activity.
+                </p>
+              </div>
+              <div className="grid grid-cols-3 text-white text-lg border-b border-[#1E1E1E]">
+                <div className="flex items-center justify-center h-24 border-r border-[#1E1E1E]">
+                  Pricing
+                </div>
+                <div className="flex items-center justify-center h-24 border-r border-[#1E1E1E]">
+                  About
+                </div>
+                <div className="flex items-center justify-center h-24">
+                  Documentation
+                </div>
+              </div>
+              <div className="grid grid-cols-3 h-24 text-white text-lg">
+                <div className="col-span-2 p-1.5 border-r border-[#1E1E1E]">
+                  <Stripes count={55} lineClassName="bg-[#1E1E1E]" />
+                </div>
+                <div className="flex items-center justify-center">Social</div>
               </div>
             </div>
           </div>
