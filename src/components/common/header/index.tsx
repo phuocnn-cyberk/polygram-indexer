@@ -18,10 +18,6 @@ import { MenuItem } from "./components";
 
 const MENU_LIST = [
   {
-    label: "About",
-    path: "#",
-  },
-  {
     label: "Pricing",
     path: "#",
   },
@@ -31,10 +27,6 @@ const MENU_LIST = [
   },
   {
     label: "Blog",
-    path: "#",
-  },
-  {
-    label: "dApp",
     path: "#",
   },
 ];
