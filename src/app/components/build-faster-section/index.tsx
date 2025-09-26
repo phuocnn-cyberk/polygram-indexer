@@ -5,9 +5,11 @@ import { useMediaQuery } from "@/hooks/use-media-query";
 import Image from "next/image";
 import { FC, useEffect, useState } from "react";
 import { TestimonialCard } from "./components";
+import { FadeIn } from "@/components/common/fade-in";
+import { FadeInBlock } from "@/components/common/fade-in-block";
 
 export const BuildFasterSection: FC = () => {
-  const isDesktop = useMediaQuery("(min-width: 768px)");
+  const isDesktop = useMediaQuery("(min-width: 1024px)");
   const testimonialsCount = isDesktop ? 5 : 4;
 
   const [currentIndex, setCurrentIndex] = useState(0);
@@ -32,20 +34,20 @@ export const BuildFasterSection: FC = () => {
         src="/assets/images/build-faster-background.png"
         alt="Get Started Background"
         fill
-        className="object-cover hidden md:block"
+        className="object-cover hidden lg:block"
         priority
       />
-      <div className="absolute inset-0 gap-y-10 md:gap-y-0 flex flex-col md:flex-row items-center justify-center gap-x-14">
-        <div className="max-w-md max-md:px-6">
-          <h2 className="text-xl md:text-[40px] font-medium leading-tight uppercase text-white">
+      <div className="absolute inset-0 gap-y-10 md:gap-y-0 flex flex-col xl:flex-row items-center justify-center gap-x-14">
+        <div className="xl:max-w-md px-6 xl:px-0">
+          <FadeIn className="text-xl md:text-[28px] lg:text-[40px] font-medium leading-tight uppercase text-white">
             Build Faster with the Blockchain Indexer API Built for Developers
-          </h2>
-          <p className="mt-6 text-xs md:text-xl text-[#6B6B6B] font-medium">
+          </FadeIn>
+          <FadeInBlock className="mt-6 text-xs md:text-base lg:text-xl text-[#6B6B6B] font-medium">
             Forget managing nodes, custom pipelines, and constant infrastructure
             headaches. With Polygram’s blockchain indexer service, you get
             low-latency, high-performance on-chain data in a single, easy-to-use
             API.
-          </p>
+          </FadeInBlock>
           <Button className="mt-8 h-12 gap-4 bg-[#2172E6] px-4 uppercase text-white hover:bg-[#2172E6] hover:shadow-[0_0_25px_0_rgba(33,114,230,0.5)]">
             <span>Docs</span>
             <div className="flex h-8 w-8 items-center justify-center rounded bg-white">
@@ -59,7 +61,7 @@ export const BuildFasterSection: FC = () => {
           </Button>
         </div>
         <div className="flex flex-col items-center">
-          <div className="relative h-[495px] w-[360px] md:h-[650px] md:w-[700px]">
+          <div className="relative h-[495px] w-[360px] xl:h-[650px] xl:w-[700px]">
             {Array.from({ length: testimonialsCount }).map((_, index) => {
               const stackIndex =
                 testimonialsCount -

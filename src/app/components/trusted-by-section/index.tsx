@@ -1,3 +1,5 @@
+import { FadeIn } from "@/components/common/fade-in";
+import { FadeInBlock } from "@/components/common/fade-in-block";
 import Image from "next/image";
 import { FC } from "react";
 
@@ -61,15 +63,15 @@ const LOGOS = [
 export const TrustedBySection: FC = () => {
   return (
     <section className="mt-20 flex flex-col items-center">
-      <h2 className="text-center text-xl md:text-4xl font-medium uppercase text-white md:max-w-3xl">
+      <FadeIn className="text-center text-xl md:text-4xl font-medium uppercase text-white md:max-w-3xl">
         Trusted Blockchain Indexer Service for Industry Leaders
-      </h2>
-      <p className="mt-6 text-center text-xs md:text-xl px-2 md:px-0 text-[#6B6B6B] md:max-w-2xl">
+      </FadeIn>
+      <FadeInBlock className="mt-6 text-center text-xs md:text-xl px-2 md:px-0 text-[#6B6B6B] md:max-w-2xl">
         Leading teams, startups, and enterprises rely on Polygram to power their
         applications. By offloading blockchain indexing to Polygram, they cut
         infrastructure costs, accelerate time-to-market, and focus on what
         matters most — building products users love.
-      </p>
+      </FadeInBlock>
       <div className="mt-8 md:mt-12 flex flex-wrap justify-center items-center gap-y-2 gap-x-8 md:gap-8 max-w-5xl">
         {LOGOS.map((logo) => (
           <Image

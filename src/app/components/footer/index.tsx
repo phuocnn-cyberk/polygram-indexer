@@ -1,6 +1,7 @@
 import Image from "next/image";
 import { FC } from "react";
 import { Stripes } from "@/components/common/stripes";
+import { FadeIn } from "@/components/common/fade-in";
 
 export const Footer: FC = () => {
   return (
@@ -13,18 +14,18 @@ export const Footer: FC = () => {
       />
       <div className="relative z-10 flex flex-col items-center gap-y-12">
         <div className="pt-38 md:pt-[192px] text-center">
-          <div className="text-2xl md:text-[64px] leading-tight text-white">
+          <FadeIn className="text-2xl md:text-[40px] lg:text-[64px] leading-tight text-white">
             Get started
             <br />
-            <span>with Polygram in 5 minutes, </span>
+            with Polygram in 5 minutes,
             <br />
             for free
-          </div>
+          </FadeIn>
         </div>
 
         <div className="w-full">
-          <div className="w-full border-y border-[#1E1E1E] xl:max-w-[1440px] mx-auto container px-0">
-            <div className="hidden md:grid w-full grid-cols-[1fr_auto_1fr]">
+          <div className="w-full border xl:border-y border-[#1E1E1E] xl:max-w-[1440px] mx-auto container">
+            <div className="hidden xl:grid w-full grid-cols-[1fr_auto_1fr]">
               <div className="grid h-full grid-rows-2">
                 <div className="border-b border-[#1E1E1E] border-l bg-[#111111]/50 backdrop-blur-xl" />
                 <div className="bg-[#111111]/50 backdrop-blur-xl border-l border-[#1E1E1E]" />
@@ -60,7 +61,7 @@ export const Footer: FC = () => {
                 <div className="bg-[#111111]/50 backdrop-blur-xl border-r border-[#1E1E1E]" />
               </div>
             </div>
-            <div className="w-full bg-[#111111]/50 backdrop-blur-xl md:hidden">
+            <div className="w-full bg-[#111111]/50 backdrop-blur-xl xl:hidden">
               <div className="p-8 border-b border-[#1E1E1E]">
                 <p className="text-base text-[#929292]">
                   Access real-time, enriched on-chain data without the hassle of

@@ -45,7 +45,7 @@ export const TokenSelector: FC = () => {
   return (
     <>
       {/* Desktop/Tablet View */}
-      <div className="hidden sm:block">
+      <div className="hidden lg:block">
         <Tabs
           defaultValue="sol"
           value={selectedToken}
@@ -75,7 +75,7 @@ export const TokenSelector: FC = () => {
       </div>
 
       {/* Mobile View */}
-      <div className="sm:hidden w-full max-w-[280px]">
+      <div className="lg:hidden w-full max-w-[280px]">
         <DropdownMenu>
           <DropdownMenuTrigger asChild>
             <Button

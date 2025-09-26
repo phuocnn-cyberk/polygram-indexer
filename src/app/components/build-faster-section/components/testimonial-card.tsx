@@ -13,7 +13,7 @@ export const TestimonialCard: FC<{
   return (
     <div
       className={cn(
-        "w-[295px] md:w-[540px] rounded-2xl border border-[#484848] bg-[#2E2E2E]/60 p-6 md:p-12 backdrop-blur-[32px]",
+        "w-[295px] md:w-[400px] lg:w-[540px] rounded-2xl border border-[#484848] bg-[#2E2E2E]/60 p-6 md:p-12 backdrop-blur-[32px]",
         className
       )}
     >

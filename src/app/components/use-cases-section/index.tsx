@@ -1,7 +1,8 @@
 "use client";
 import { FC } from "react";
 import { UseCaseCard } from "./components/use-case-card";
-import { motion } from "framer-motion";
+import { motion } from "motion/react";
+import { FadeIn } from "@/components/common/fade-in";
 
 const USE_CASES_DATA = [
   {
@@ -90,11 +91,11 @@ export const UseCasesSection: FC = () => {
 
   return (
     <section className="mt-8 md:mt-20 flex flex-col items-center">
-      <h2 className="text-center text-xl md:text-4xl font-medium uppercase text-white md:max-w-3xl">
+      <FadeIn className="text-center text-xl md:text-4xl font-medium uppercase text-white md:max-w-3xl">
         Why Developers Choose Polygram for Blockchain Indexing
-      </h2>
+      </FadeIn>
       <motion.div
-        className="mt-8 w-full max-w-[375px] md:max-w-[1156px] gap-5 overflow-x-auto md:mt-12 md:flex md:flex-wrap md:justify-center md:overflow-x-visible grid grid-flow-col grid-rows-2 pl-6 md:pl-0"
+        className="mt-8 w-full max-w-[375px] sm:max-w-[600px] xl:max-w-[1156px] gap-5 overflow-x-auto md:mt-12 xl:flex xl:flex-wrap xl:justify-center xl:overflow-x-visible grid grid-flow-col grid-rows-2 pl-6 xl:pl-0"
         variants={containerVariants}
         initial="hidden"
         whileInView="visible"

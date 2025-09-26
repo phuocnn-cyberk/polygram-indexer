@@ -1,6 +1,6 @@
 import Image from "next/image";
 import { forwardRef } from "react";
-import { motion, MotionProps } from "framer-motion";
+import { motion, MotionProps } from "motion/react";
 
 interface UseCaseCardProps {
   icon: string;
@@ -16,7 +16,7 @@ export const UseCaseCard = forwardRef<
     <motion.div
       ref={ref}
       {...props}
-      className="w-[274px] shrink-0 rounded-2xl border border-[#262626] p-px md:w-full md:max-w-[274px]"
+      className="w-[274px] shrink-0 rounded-2xl border border-[#262626] p-px"
     >
       <div className="relative h-full w-full rounded-[15px] border border-transparent bg-transparent p-4 md:p-7">
         <div

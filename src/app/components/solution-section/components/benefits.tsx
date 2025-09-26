@@ -2,7 +2,7 @@
 import { Dots } from "@/components/common/dots";
 import Image from "next/image";
 import { FC } from "react";
-import { motion } from "framer-motion";
+import { motion } from "motion/react";
 
 const BENEFITS_DATA = [
   {

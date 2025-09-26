@@ -12,7 +12,7 @@ import {
 
 export const SolutionSection: FC = () => {
   return (
-    <section className="flex flex-col items-center px-4 md:px-0">
+    <section className="flex flex-col items-center px-4 md:px-8 lg:px-0">
       <div className="relative h-8 w-full mb-4 md:mb-12 max-w-[1156px]">
         <div className="absolute inset-0 bg-[#252525]" />
         <div className="absolute inset-0 top-0.25 bg-[#111111] rounded-tl-2xl rounded-tr-2xl" />
