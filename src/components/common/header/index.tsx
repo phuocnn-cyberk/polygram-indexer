@@ -18,12 +18,12 @@ import { MenuItem } from "./components";
 
 const MENU_LIST = [
   {
-    label: "Pricing",
+    label: "About",
     path: "#",
   },
   {
-    label: "Docs",
-    path: "#",
+    label: "Pricing",
+    path: "/pricing",
   },
   {
     label: "Blog",
@@ -68,11 +68,15 @@ export const Header: FC = () => {
         show ? "translate-y-0" : "-translate-y-full"
       } ${isScrolled ? "bg-[#0A0A0A]" : "bg-transparent"}`}
     >
-      <Logo />
+      <Link href="/">
+        <Logo />
+      </Link>
       <div className="hidden lg:flex items-center">
         <nav className="flex items-center bg-[#18181A] rounded-lg p-2">
           {MENU_LIST.map((item) => (
-            <MenuItem key={item.label}>{item.label}</MenuItem>
+            <Link key={item.label} href={item.path}>
+              <MenuItem>{item.label}</MenuItem>
+            </Link>
           ))}
           <Button className="bg-[#2172E6] text-base h-10 btn-discover hover:text-black text-white">
             Get started

@@ -7,7 +7,6 @@ import { FC, useCallback, useEffect, useState } from "react";
 import { TestimonialCard } from "./components";
 import { FadeIn } from "@/components/common/fade-in";
 import { FadeInBlock } from "@/components/common/fade-in-block";
-import { AnimatePresence, motion } from "motion/react";
 
 export const BuildFasterSection: FC = () => {
   const isDesktop = useMediaQuery("(min-width: 1024px)");

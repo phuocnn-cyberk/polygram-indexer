@@ -3,6 +3,7 @@ import { Dots } from "@/components/common/dots";
 import Image from "next/image";
 import { FC } from "react";
 import { motion } from "motion/react";
+import { cardVariants, containerVariants } from "@/lib/animations";
 
 const BENEFITS_DATA = [
   {
@@ -29,28 +30,6 @@ const BENEFITS_DATA = [
 ];
 
 export const Benefits: FC = () => {
-  const containerVariants = {
-    hidden: { opacity: 0 },
-    visible: {
-      opacity: 1,
-      transition: {
-        staggerChildren: 0.3,
-        delayChildren: 0.2,
-      },
-    },
-  };
-
-  const cardVariants = {
-    hidden: { opacity: 0, y: 20 },
-    visible: {
-      opacity: 1,
-      y: 0,
-      transition: {
-        duration: 0.5,
-      },
-    },
-  };
-
   return (
     <motion.div
       className="mt-4 md:mt-20 mb-8 md:mb-16 grid w-full lg:grid-cols-3 grid-cols-1 gap-4 md:gap-8"

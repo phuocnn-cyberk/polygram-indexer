@@ -3,6 +3,7 @@ import { FC } from "react";
 import { UseCaseCard } from "./components/use-case-card";
 import { motion } from "motion/react";
 import { FadeIn } from "@/components/common/fade-in";
+import { cardVariants, containerVariants } from "@/lib/animations";
 
 const USE_CASES_DATA = [
   {
@@ -68,34 +69,13 @@ const USE_CASES_DATA = [
 ];
 
 export const UseCasesSection: FC = () => {
-  const containerVariants = {
-    hidden: { opacity: 0 },
-    visible: {
-      opacity: 1,
-      transition: {
-        staggerChildren: 0.1,
-      },
-    },
-  };
-
-  const cardVariants = {
-    hidden: { opacity: 0, y: 20 },
-    visible: {
-      opacity: 1,
-      y: 0,
-      transition: {
-        duration: 0.5,
-      },
-    },
-  };
-
   return (
     <section className="mt-8 md:mt-20 flex flex-col items-center">
       <FadeIn className="text-center text-xl md:text-4xl font-medium uppercase text-white md:max-w-3xl">
         Why Developers Choose Polygram for Blockchain Indexing
       </FadeIn>
       <motion.div
-        className="mt-8 w-full max-w-[375px] sm:max-w-[600px] xl:max-w-[1156px] gap-5 overflow-x-auto md:mt-12 xl:flex xl:flex-wrap xl:justify-center xl:overflow-x-visible grid grid-flow-col grid-rows-2 pl-6 xl:pl-0"
+        className="mt-8 w-full max-w-[375px] sm:max-w-[600px] no-scrollbar md:max-w-[900px] xl:max-w-[1156px] gap-5 overflow-x-auto md:mt-12 xl:flex xl:flex-wrap xl:justify-center xl:overflow-x-visible grid grid-flow-col grid-rows-2 pl-6 xl:pl-0"
         variants={containerVariants}
         initial="hidden"
         whileInView="visible"
