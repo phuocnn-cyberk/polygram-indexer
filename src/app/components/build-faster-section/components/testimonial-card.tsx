@@ -39,9 +39,6 @@ export const TestimonialCard: FC<{
           providers previously, including the Graph, and have now consolidated
           everything to Polygram.
         </p>
-        <p className="mt-3 text-xs md:text-sm text-[#8C8C8C]">
-          Alex T., Head of Product, Crypto
-        </p>
       </div>
 
       {showControls && (

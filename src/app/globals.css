@@ -144,6 +144,13 @@
     .btn-discover:hover {
       @apply text-black;
     }
+  .no-scrollbar::-webkit-scrollbar {
+    display: none;
+  }
+  .no-scrollbar {
+    -ms-overflow-style: none; /* IE and Edge */
+    scrollbar-width: none; /* Firefox */
+  }
 }
 
 @layer utilities {
@@ -152,6 +159,9 @@
   }
   .animate-scroll {
     animation: scroll 40s linear infinite;
+  }
+  .text-balance {
+    text-wrap: balance;
   }
 }
 

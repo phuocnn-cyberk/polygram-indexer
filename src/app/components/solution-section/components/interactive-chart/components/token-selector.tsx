@@ -10,6 +10,7 @@ import {
   DropdownMenuItem,
   DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu";
+import { ChevronDown } from "lucide-react";
 
 const TOKENS = [
   {
@@ -51,7 +52,7 @@ export const TokenSelector: FC = () => {
           value={selectedToken}
           onValueChange={setSelectedToken}
         >
-          <TabsList className="h-13 gap-2 sm:gap-4 lg:gap-6 rounded-lg bg-[#1B1B1B] p-1 sm:p-2 overflow-x-auto">
+          <TabsList className="h-13 gap-2 sm:gap-4 lg:gap-6 rounded-lg bg-[#1B1B1B] p-1 sm:p-2">
             {TOKENS.map((token) => (
               <TabsTrigger
                 key={token.value}
@@ -90,26 +91,14 @@ export const TokenSelector: FC = () => {
                   alt={
                     TOKENS.find((t) => t.value === selectedToken)?.label || ""
                   }
-                  width={20}
-                  height={20}
+                  width={24}
+                  height={24}
                 />
                 <span className="text-sm font-medium">
                   {TOKENS.find((t) => t.value === selectedToken)?.label}
                 </span>
               </div>
-              <svg
-                className="w-4 h-4 text-[#565656]"
-                fill="none"
-                stroke="currentColor"
-                viewBox="0 0 24 24"
-              >
-                <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  strokeWidth={2}
-                  d="M19 9l-7 7-7-7"
-                />
-              </svg>
+              <ChevronDown />
             </Button>
           </DropdownMenuTrigger>
           <DropdownMenuContent className="w-full bg-[#1B1B1B] border-[#565656] min-w-[200px]">

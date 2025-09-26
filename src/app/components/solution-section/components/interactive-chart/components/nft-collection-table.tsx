@@ -23,7 +23,7 @@ const NFT_COLLECTIONS = Array(10).fill({
 
 export const NftCollectionTable: FC = () => {
   return (
-    <div className="relative mt-6 max-h-[374px] overflow-y-auto">
+    <div className="relative mt-6 max-h-[374px] overflow-y-auto no-scrollbar">
       <Table>
         <TableHeader>
           <TableRow className="border-b border-[#212020] hover:bg-transparent">

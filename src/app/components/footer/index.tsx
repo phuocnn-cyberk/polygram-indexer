@@ -31,7 +31,7 @@ export const Footer: FC = () => {
                 <div className="bg-[#111111]/50 backdrop-blur-xl border-l border-[#1E1E1E]" />
               </div>
               <div className="grid grid-cols-[408px_204px_204px_204px] border-x border-[#1E1E1E] bg-[#111111]/50 backdrop-blur-xl">
-                <div className="row-span-2 border-r border-[#1E1E1E] p-8">
+                <FadeIn className="row-span-2 border-r border-[#1E1E1E] p-8">
                   <p className="text-base text-[#929292]">
                     Access real-time, enriched on-chain data without the hassle
                     of running your own infrastructure. Our blockchain indexer
@@ -39,22 +39,22 @@ export const Footer: FC = () => {
                     — from pricing and historical transactions to token holders,
                     liquidity, and wallet activity.
                   </p>
-                </div>
-                <div className="flex items-center justify-center border-b border-r border-[#1E1E1E]">
+                </FadeIn>
+                <FadeIn className="flex items-center justify-center border-b border-r border-[#1E1E1E]">
                   <span className="text-lg text-white">Pricing</span>
-                </div>
-                <div className="flex items-center justify-center border-b border-r border-[#1E1E1E]">
+                </FadeIn>
+                <FadeIn className="flex items-center justify-center border-b border-r border-[#1E1E1E]">
                   <span className="text-lg text-white">About</span>
-                </div>
-                <div className="flex items-center justify-center border-b border-[#1E1E1E]">
+                </FadeIn>
+                <FadeIn className="flex items-center justify-center border-b border-[#1E1E1E]">
                   <span className="text-lg text-white">Documentation</span>
-                </div>
-                <div className="col-span-2 border-r border-[#1E1E1E] p-1.5">
+                </FadeIn>
+                <FadeIn className="col-span-2 border-r border-[#1E1E1E] p-1.5">
                   <Stripes count={55} lineClassName="bg-[#1E1E1E]" />
-                </div>
-                <div className="flex items-center justify-center">
+                </FadeIn>
+                <FadeIn className="flex items-center justify-center">
                   <span className="text-lg text-white">Social</span>
-                </div>
+                </FadeIn>
               </div>
               <div className="grid h-full grid-rows-2">
                 <div className="border-b border-[#1E1E1E] border-r bg-[#111111]/50 backdrop-blur-xl" />
@@ -62,7 +62,7 @@ export const Footer: FC = () => {
               </div>
             </div>
             <div className="w-full bg-[#111111]/50 backdrop-blur-xl xl:hidden">
-              <div className="p-8 border-b border-[#1E1E1E]">
+              <FadeIn className="p-8 border-b border-[#1E1E1E]">
                 <p className="text-base text-[#929292]">
                   Access real-time, enriched on-chain data without the hassle of
                   running your own infrastructure. Our blockchain indexer API
@@ -70,31 +70,33 @@ export const Footer: FC = () => {
                   from pricing and historical transactions to token holders,
                   liquidity, and wallet activity.
                 </p>
-              </div>
+              </FadeIn>
               <div className="grid grid-cols-3 text-white text-lg border-b border-[#1E1E1E]">
-                <div className="flex items-center justify-center h-24 border-r border-[#1E1E1E]">
+                <FadeIn className="flex items-center justify-center h-24 border-r border-[#1E1E1E]">
                   Pricing
-                </div>
-                <div className="flex items-center justify-center h-24 border-r border-[#1E1E1E]">
+                </FadeIn>
+                <FadeIn className="flex items-center justify-center h-24 border-r border-[#1E1E1E]">
                   About
-                </div>
-                <div className="flex items-center justify-center h-24">
+                </FadeIn>
+                <FadeIn className="flex items-center justify-center h-24">
                   Documentation
-                </div>
+                </FadeIn>
               </div>
               <div className="grid grid-cols-3 h-24 text-white text-lg">
-                <div className="col-span-2 p-1.5 border-r border-[#1E1E1E]">
+                <FadeIn className="col-span-2 p-1.5 border-r border-[#1E1E1E]">
                   <Stripes count={55} lineClassName="bg-[#1E1E1E]" />
-                </div>
-                <div className="flex items-center justify-center">Social</div>
+                </FadeIn>
+                <FadeIn className="flex items-center justify-center">
+                  Social
+                </FadeIn>
               </div>
             </div>
           </div>
-          <div className="w-full pt-20 pb-11 text-center">
+          <FadeIn className="w-full pt-20 pb-11 text-center">
             <span className="text-[#929292]">
               Polygram ©2025 All rights reserved
             </span>
-          </div>
+          </FadeIn>
         </div>
       </div>
     </footer>

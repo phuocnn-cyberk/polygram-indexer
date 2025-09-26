@@ -22,7 +22,7 @@ const HOLDER_DATA = Array.from({ length: 10 }, (_, i) => ({
 
 export const HoldersTable: FC = () => {
   return (
-    <div className="relative mt-6 max-h-[374px] overflow-y-auto">
+    <div className="relative mt-6 max-h-[374px] overflow-y-auto no-scrollbar">
       <Table>
         <TableHeader className="sticky top-0 z-10 bg-[#141415]">
           <TableRow className="border-b border-[#212020] !h-11 py- hover:bg-transparent">

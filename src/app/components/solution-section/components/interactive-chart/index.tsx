@@ -8,8 +8,8 @@ const TABS = [
   { value: "chart-data", label: "CHART DATA", component: <ChartDataTab /> },
   { value: "nft-data", label: "NFT DATA", component: <NftDataTab /> },
   {
-    value: "holders-data",
-    label: "HOLDERS DATA",
+    value: "token-holders-data",
+    label: "TOKEN HOLDERS DATA",
     component: <HoldersDataTab />,
   },
 ];

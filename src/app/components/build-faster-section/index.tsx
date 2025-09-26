@@ -3,30 +3,32 @@
 import { Button } from "@/components/ui/button";
 import { useMediaQuery } from "@/hooks/use-media-query";
 import Image from "next/image";
-import { FC, useEffect, useState } from "react";
+import { FC, useCallback, useEffect, useState } from "react";
 import { TestimonialCard } from "./components";
 import { FadeIn } from "@/components/common/fade-in";
 import { FadeInBlock } from "@/components/common/fade-in-block";
+import { AnimatePresence, motion } from "motion/react";
 
 export const BuildFasterSection: FC = () => {
   const isDesktop = useMediaQuery("(min-width: 1024px)");
-  const testimonialsCount = isDesktop ? 5 : 4;
 
   const [currentIndex, setCurrentIndex] = useState(0);
 
+  const handleNext = useCallback(() => {
+    setCurrentIndex((prev) => (prev + 1) % 4);
+  }, []);
+
+  const handlePrevious = useCallback(() => {
+    setCurrentIndex((prev) => (prev - 1 + 4) % 4);
+  }, []);
+
   useEffect(() => {
-    setCurrentIndex(0);
-  }, [testimonialsCount]);
+    const timer = setInterval(() => {
+      handleNext();
+    }, 5000);
 
-  const handleNext = () => {
-    setCurrentIndex((prev) => (prev + 1) % testimonialsCount);
-  };
-
-  const handlePrevious = () => {
-    setCurrentIndex(
-      (prev) => (prev - 1 + testimonialsCount) % testimonialsCount
-    );
-  };
+    return () => clearInterval(timer);
+  }, [currentIndex, handleNext]);
 
   return (
     <section className="relative mt-20 h-[800px] w-full">
@@ -62,19 +64,13 @@ export const BuildFasterSection: FC = () => {
         </div>
         <div className="flex flex-col items-center">
           <div className="relative h-[495px] w-[360px] xl:h-[650px] xl:w-[700px]">
-            {Array.from({ length: testimonialsCount }).map((_, index) => {
-              const stackIndex =
-                testimonialsCount -
-                1 -
-                ((currentIndex - index + testimonialsCount) %
-                  testimonialsCount);
+            {Array.from({ length: 4 }).map((_, index) => {
+              const stackIndex = 3 - ((currentIndex - index + 4) % 4);
 
               const top = isDesktop ? stackIndex * 40 : stackIndex * 20;
               const left = isDesktop
-                ? (testimonialsCount - 1 - stackIndex) * 40
-                : `calc(50% - 150px + ${
-                    (testimonialsCount - 1 - stackIndex) * 20
-                  }px)`;
+                ? (3 - stackIndex) * 40
+                : `calc(50% - 150px + ${(3 - stackIndex) * 20}px)`;
 
               return (
                 <div
@@ -87,7 +83,7 @@ export const BuildFasterSection: FC = () => {
                   }}
                 >
                   <TestimonialCard
-                    showControls={stackIndex === testimonialsCount - 1}
+                    showControls={stackIndex === 3}
                     onNext={handleNext}
                     onPrevious={handlePrevious}
                   />
