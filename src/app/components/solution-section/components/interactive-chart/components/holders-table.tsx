@@ -12,13 +12,68 @@ import {
 import { CopyIcon } from "lucide-react";
 import { HolderAvatar } from ".";
 
-const HOLDER_DATA = Array.from({ length: 10 }, (_, i) => ({
-  address: `0xf977…ace${i}`,
-  percentage: 8.98 - i * 0.3,
-  quantity: 24500000000000 - i * 1234567890,
-  valueUSD: 435000000 - i * 15000000,
-  progress: 60 - i * 4,
-}));
+const HOLDER_DATA = [
+  {
+    address: "0x30c1…a416",
+    percentage: 1.95,
+    quantity: 195000000000,
+    valueUSD: 3480000,
+  },
+  {
+    address: "0x1d5a…a157",
+    percentage: 1.18,
+    quantity: 118000000000,
+    valueUSD: 2100000,
+  },
+  {
+    address: "0x96d3…b929",
+    percentage: 1.06,
+    quantity: 106000000000,
+    valueUSD: 1890000,
+  },
+  {
+    address: "0x6f3e…d6f1",
+    percentage: 0.91,
+    quantity: 91000000000,
+    valueUSD: 1620000,
+  },
+  {
+    address: "0x7a3c…2f8b",
+    percentage: 0.88,
+    quantity: 88000000000,
+    valueUSD: 1570000,
+  },
+  {
+    address: "0x8a2b…c4d5",
+    percentage: 0.85,
+    quantity: 85000000000,
+    valueUSD: 1510000,
+  },
+  {
+    address: "0x4e5f…a1b2",
+    percentage: 0.82,
+    quantity: 82000000000,
+    valueUSD: 1460000,
+  },
+  {
+    address: "0x9c0d…e3f4",
+    percentage: 0.79,
+    quantity: 79000000000,
+    valueUSD: 1410000,
+  },
+  {
+    address: "0x2a1b…d5e6",
+    percentage: 0.76,
+    quantity: 76000000000,
+    valueUSD: 1350000,
+  },
+  {
+    address: "0x6d4c…b8a9",
+    percentage: 0.73,
+    quantity: 73000000000,
+    valueUSD: 1300000,
+  },
+];
 
 export const HoldersTable: FC = () => {
   return (
@@ -45,6 +100,9 @@ export const HoldersTable: FC = () => {
         </TableHeader>
         <TableBody>
           {HOLDER_DATA.map((holder, index) => {
+            const topHolderQuantity = HOLDER_DATA[0].quantity;
+            const progress = (holder.quantity / topHolderQuantity) * 60;
+
             return (
               <TableRow
                 key={index}
@@ -74,11 +132,11 @@ export const HoldersTable: FC = () => {
                     <div className="h-3 w-full max-w-[186px] rounded-lg bg-[#252525]">
                       <div
                         className="h-3 rounded-lg bg-[#2172E6]"
-                        style={{ width: `${holder.progress}%` }}
+                        style={{ width: `${progress}%` }}
                       />
                     </div>
                     <span className="text-base font-medium text-white">
-                      {(holder.quantity / 1e12).toFixed(1)}T
+                      {(holder.quantity / 1e9).toFixed(1)}B
                     </span>
                   </div>
                 </TableCell>

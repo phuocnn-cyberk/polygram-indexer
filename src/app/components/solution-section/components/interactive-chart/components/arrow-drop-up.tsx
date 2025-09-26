@@ -1,27 +1,23 @@
 import { FC } from "react";
 
-export const ArrowDropUp: FC = () => (
-  <svg
-    width="16"
-    height="16"
-    viewBox="0 0 16 16"
-    fill="none"
-    xmlns="http://www.w3.org/2000/svg"
-  >
-    <g clipPath="url(#clip0_463_3276)">
+interface ArrowDropUpProps {
+  isNegative?: boolean;
+}
+
+export const ArrowDropUp: FC<ArrowDropUpProps> = ({ isNegative }) => {
+  return (
+    <svg
+      width="14"
+      height="14"
+      viewBox="0 0 14 14"
+      fill="none"
+      xmlns="http://www.w3.org/2000/svg"
+      className={isNegative ? "transform rotate-180" : ""}
+    >
       <path
-        d="M3.80664 9.89337L7.33997 6.36004C7.71331 5.9867 8.28664 5.9867 8.65997 6.36004L12.1933 9.89337"
-        stroke="#42C16E"
-        strokeWidth="1.5"
-        strokeMiterlimit="10"
-        strokeLinecap="round"
-        strokeLinejoin="round"
+        d="M7 4.66666L3.5 8.16666H10.5L7 4.66666Z"
+        fill={isNegative ? "#FF0000" : "#42C16E"}
       />
-    </g>
-    <defs>
-      <clipPath id="clip0_463_3276)">
-        <rect width="16" height="16" fill="white" />
-      </clipPath>
-    </defs>
-  </svg>
-);
+    </svg>
+  );
+};
