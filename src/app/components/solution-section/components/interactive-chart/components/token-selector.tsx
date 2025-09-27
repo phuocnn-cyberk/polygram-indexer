@@ -1,5 +1,34 @@
 "use client";
 
+import { FC } from "react";
+import Image from "next/image";
+
+const APTOS_TOKEN = {
+  value: "apt",
+  label: "Aptos",
+  icon: "/assets/icons/aptos.svg",
+};
+
+export const TokenSelector: FC = () => {
+  return (
+    <div className="flex h-9 md:h-13 items-center gap-2 rounded-lg bg-[#1B1B1B] p-2 sm:gap-4 lg:gap-6">
+      <div className="flex cursor-pointer items-center gap-1 text-white sm:gap-2">
+        <Image
+          src={APTOS_TOKEN.icon}
+          alt={APTOS_TOKEN.label}
+          width={24}
+          height={24}
+          className="h-6 w-6"
+        />
+        <span className="text-base font-medium">{APTOS_TOKEN.label}</span>
+      </div>
+    </div>
+  );
+};
+
+/*
+"use client";
+
 import { FC, useState } from "react";
 import Image from "next/image";
 import { Tabs, TabsList, TabsTrigger } from "@/components/ui/tabs";
@@ -45,7 +74,7 @@ export const TokenSelector: FC = () => {
 
   return (
     <>
-      {/* Desktop/Tablet View */}
+      // Desktop/Tablet View
       <div className="hidden lg:block">
         <Tabs
           defaultValue="sol"
@@ -75,7 +104,7 @@ export const TokenSelector: FC = () => {
         </Tabs>
       </div>
 
-      {/* Mobile View */}
+      // Mobile View
       <div className="lg:hidden w-full max-w-[280px]">
         <DropdownMenu>
           <DropdownMenuTrigger asChild>
@@ -125,3 +154,4 @@ export const TokenSelector: FC = () => {
     </>
   );
 };
+*/
