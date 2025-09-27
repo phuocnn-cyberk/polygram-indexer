@@ -3,7 +3,7 @@
 import { Button } from "@/components/ui/button";
 import { useMediaQuery } from "@/hooks/use-media-query";
 import Image from "next/image";
-import { FC, useCallback, useEffect, useState } from "react";
+import { FC, useState } from "react";
 import { TestimonialCard } from "./components";
 import { FadeIn } from "@/components/common/fade-in";
 import { FadeInBlock } from "@/components/common/fade-in-block";
@@ -11,7 +11,7 @@ import { FadeInBlock } from "@/components/common/fade-in-block";
 export const BuildFasterSection: FC = () => {
   const isDesktop = useMediaQuery("(min-width: 1024px)");
 
-  const [currentIndex, setCurrentIndex] = useState(0);
+  const [currentIndex] = useState(0);
 
   // const handleNext = useCallback(() => {
   //   setCurrentIndex((prev) => (prev + 1) % 4);
@@ -81,11 +81,7 @@ export const BuildFasterSection: FC = () => {
                     zIndex: stackIndex,
                   }}
                 >
-                  <TestimonialCard
-                    showControls={stackIndex === 3}
-                    // onNext={handleNext}
-                    // onPrevious={handlePrevious}
-                  />
+                  <TestimonialCard />
                 </div>
               );
             })}

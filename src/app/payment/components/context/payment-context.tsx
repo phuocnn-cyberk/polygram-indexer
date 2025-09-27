@@ -32,6 +32,15 @@ export interface PaymentState {
   // Payment
   paymentMethod: 'crypto' | 'card' | 'bank';
   isProcessing: boolean;
+  
+  // Payment Dialog State
+  showPaymentDialog: boolean;
+  showPaymentResult: boolean;
+  paymentResult: {
+    isSuccess: boolean;
+    paymentMethodId?: string;
+    errorMessage?: string;
+  };
 }
 
 export interface PaymentContextType extends PaymentState {
@@ -40,6 +49,13 @@ export interface PaymentContextType extends PaymentState {
   applyPromoCode: (code: string) => Promise<void>;
   changePaymentMethod: (method: 'crypto' | 'card' | 'bank') => void;
   processPayment: () => Promise<void>;
+  
+  // Payment Dialog Actions
+  openPaymentDialog: () => void;
+  closePaymentDialog: () => void;
+  handlePaymentSuccess: (paymentMethodId: string) => void;
+  handlePaymentError: (error: string) => void;
+  closePaymentResult: () => void;
 }
 
 // Initial state
@@ -70,7 +86,12 @@ const initialState: PaymentState = {
   isPromoValid: false,
   promoError: '',
   paymentMethod: 'crypto',
-  isProcessing: false
+  isProcessing: false,
+  showPaymentDialog: false,
+  showPaymentResult: false,
+  paymentResult: {
+    isSuccess: false
+  }
 };
 
 // Context
@@ -171,27 +192,64 @@ export function PaymentProvider({ children }: { children: React.ReactNode }) {
   }, []);
   
   const processPayment = useCallback(async () => {
-    setState(prev => ({ ...prev, isProcessing: true }));
-    
-    // Simulate payment processing
-    await new Promise(resolve => setTimeout(resolve, 2000));
-    
-    setState(prev => ({ ...prev, isProcessing: false }));
-    
-    // Handle payment success/failure
-    console.log('Payment processed:', {
-      amount: state.total,
-      method: state.paymentMethod,
-      plan: state.selectedPlan.title
-    });
-  }, [state.total, state.paymentMethod, state.selectedPlan.title]);
+    // Open payment dialog instead of processing immediately
+    setState(prev => ({ ...prev, showPaymentDialog: true }));
+  }, []);
+
+  // Payment Dialog Actions
+  const openPaymentDialog = useCallback(() => {
+    setState(prev => ({ ...prev, showPaymentDialog: true }));
+  }, []);
+
+  const closePaymentDialog = useCallback(() => {
+    setState(prev => ({ ...prev, showPaymentDialog: false }));
+  }, []);
+
+  const handlePaymentSuccess = useCallback((paymentMethodId: string) => {
+    setState(prev => ({
+      ...prev,
+      showPaymentDialog: false,
+      showPaymentResult: true,
+      paymentResult: {
+        isSuccess: true,
+        paymentMethodId
+      }
+    }));
+  }, []);
+
+  const handlePaymentError = useCallback((error: string) => {
+    setState(prev => ({
+      ...prev,
+      showPaymentDialog: false,
+      showPaymentResult: true,
+      paymentResult: {
+        isSuccess: false,
+        errorMessage: error
+      }
+    }));
+  }, []);
+
+  const closePaymentResult = useCallback(() => {
+    setState(prev => ({
+      ...prev,
+      showPaymentResult: false,
+      paymentResult: {
+        isSuccess: false
+      }
+    }));
+  }, []);
   
   const value: PaymentContextType = {
     ...state,
     updateRequestVolume,
     applyPromoCode,
     changePaymentMethod,
-    processPayment
+    processPayment,
+    openPaymentDialog,
+    closePaymentDialog,
+    handlePaymentSuccess,
+    handlePaymentError,
+    closePaymentResult
   };
   
   return (
