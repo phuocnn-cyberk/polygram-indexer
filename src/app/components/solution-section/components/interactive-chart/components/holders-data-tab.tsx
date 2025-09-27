@@ -10,7 +10,7 @@ export const HoldersDataTab: FC = () => {
             Total holder
           </p>
           <p className="font-satoshi text-2xl md:text-[32px] font-medium text-[#2172E6]">
-            100.3K
+            47.9M
           </p>
         </div>
         <TokenSelector />

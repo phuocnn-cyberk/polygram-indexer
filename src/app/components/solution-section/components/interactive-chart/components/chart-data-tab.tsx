@@ -77,7 +77,7 @@ export const ChartDataTab: FC = () => {
         <div>
           <p className="text-sm md:text-lg text-[#8A8A8A]">SOL Price</p>
           <p className="font-satoshi text-2xl md:text-[32px] font-medium text-[#2172E6]">
-            $213.56
+            $4.08
           </p>
         </div>
         <TokenSelector />

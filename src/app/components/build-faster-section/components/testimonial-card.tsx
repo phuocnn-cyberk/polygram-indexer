@@ -41,7 +41,7 @@ export const TestimonialCard: FC<{
         </p>
       </div>
 
-      {showControls && (
+      {/* {showControls && (
         <div className="mt-8 flex items-center justify-end gap-x-2">
           <Button
             onClick={onPrevious}
@@ -58,7 +58,7 @@ export const TestimonialCard: FC<{
             <ArrowRight className="text-[#111111]" />
           </Button>
         </div>
-      )}
+      )} */}
     </div>
   );
 };

@@ -13,21 +13,21 @@ export const BuildFasterSection: FC = () => {
 
   const [currentIndex, setCurrentIndex] = useState(0);
 
-  const handleNext = useCallback(() => {
-    setCurrentIndex((prev) => (prev + 1) % 4);
-  }, []);
+  // const handleNext = useCallback(() => {
+  //   setCurrentIndex((prev) => (prev + 1) % 4);
+  // }, []);
 
-  const handlePrevious = useCallback(() => {
-    setCurrentIndex((prev) => (prev - 1 + 4) % 4);
-  }, []);
+  // const handlePrevious = useCallback(() => {
+  //   setCurrentIndex((prev) => (prev - 1 + 4) % 4);
+  // }, []);
 
-  useEffect(() => {
-    const timer = setInterval(() => {
-      handleNext();
-    }, 5000);
+  // useEffect(() => {
+  //   const timer = setInterval(() => {
+  //     handleNext();
+  //   }, 5000);
 
-    return () => clearInterval(timer);
-  }, [currentIndex, handleNext]);
+  //   return () => clearInterval(timer);
+  // }, [currentIndex, handleNext]);
 
   return (
     <section className="relative mt-20 h-[800px] w-full">
@@ -83,8 +83,8 @@ export const BuildFasterSection: FC = () => {
                 >
                   <TestimonialCard
                     showControls={stackIndex === 3}
-                    onNext={handleNext}
-                    onPrevious={handlePrevious}
+                    // onNext={handleNext}
+                    // onPrevious={handlePrevious}
                   />
                 </div>
               );
