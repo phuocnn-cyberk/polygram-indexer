@@ -1,6 +1,7 @@
 import { FC } from "react";
 import Image from "next/image";
 import { motion, Variants } from "motion/react";
+import { useRouter } from "next/navigation";
 
 import { Button } from "@/components/ui/button";
 
@@ -33,6 +34,7 @@ export const PricingCard: FC<PricingCardProps> = ({
   isCustom,
   variants,
 }) => {
+  const router = useRouter();
   const borderStyle = {
     background: `linear-gradient(90deg, transparent 0%, ${borderColor} 50%, transparent 100%)`,
   };
@@ -88,6 +90,7 @@ export const PricingCard: FC<PricingCardProps> = ({
             <Button
               variant="default"
               className="h-11 w-full cursor-pointer bg-white text-black hover:bg-gray-200"
+              onClick={() => router.push('/payment')}
             >
               Get Started
             </Button>

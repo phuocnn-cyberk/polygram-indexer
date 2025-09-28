@@ -58,16 +58,6 @@ export function PriceBreakdown({ subtotal, taxes, total, discount }: PriceBreakd
           ${total.toFixed(2)}
         </span>
       </div>
-      
-      {/* Security Badge */}
-      <div className="flex items-center justify-center space-x-2 pt-2">
-        <div className="w-4 h-4 bg-[#2196F3] rounded-sm flex items-center justify-center">
-          <div className="w-2 h-2 bg-white rounded-sm"></div>
-        </div>
-        <span className="text-xs text-[#AEAEAE] font-raleway">
-          Secure payment
-        </span>
-      </div>
     </div>
   );
 }

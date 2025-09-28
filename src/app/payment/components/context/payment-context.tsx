@@ -56,6 +56,9 @@ export interface PaymentContextType extends PaymentState {
   handlePaymentSuccess: (paymentMethodId: string) => void;
   handlePaymentError: (error: string) => void;
   closePaymentResult: () => void;
+  
+  // Payment Method Dialog Actions
+  openPaymentMethodDialog: () => void;
 }
 
 // Initial state
@@ -85,7 +88,7 @@ const initialState: PaymentState = {
   promoCode: '',
   isPromoValid: false,
   promoError: '',
-  paymentMethod: 'crypto',
+  paymentMethod: 'card',
   isProcessing: false,
   showPaymentDialog: false,
   showPaymentResult: false,
@@ -237,6 +240,11 @@ export function PaymentProvider({ children }: { children: React.ReactNode }) {
       }
     }));
   }, []);
+
+  const openPaymentMethodDialog = useCallback(() => {
+    // This function can be used to trigger payment method dialog opening
+    // The actual dialog state will be managed by the component using it
+  }, []);
   
   const value: PaymentContextType = {
     ...state,
@@ -248,7 +256,8 @@ export function PaymentProvider({ children }: { children: React.ReactNode }) {
     closePaymentDialog,
     handlePaymentSuccess,
     handlePaymentError,
-    closePaymentResult
+    closePaymentResult,
+    openPaymentMethodDialog
   };
   
   return (

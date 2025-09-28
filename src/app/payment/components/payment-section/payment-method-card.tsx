@@ -1,29 +1,39 @@
 'use client';
 
 import { usePayment } from '../context/payment-context';
+import { useState } from 'react';
+import { PaymentMethodDialog } from './payment-method-dialog';
+import VisaLogo from '../../assets/Visa.svg';
+import Image from 'next/image';
 
 export function PaymentMethodCard() {
-  const { changePaymentMethod } = usePayment();
+  const [isDialogOpen, setIsDialogOpen] = useState(false);
   
   return (
-    <div className="bg-gray-800 border border-gray-700 rounded-lg p-4">
-      <div className="flex items-center justify-between">
-        <div className="flex items-center space-x-3">
-          {/* Crypto Icon */}
-          <div className="w-6 h-6 bg-blue-600 rounded-sm flex items-center justify-center">
-            <div className="w-3 h-3 bg-white rounded-sm rotate-45"></div>
-          </div>
+    <>
+      <div 
+        className="cursor-pointer hover:opacity-80 transition-opacity"
+        onClick={() => setIsDialogOpen(true)}
+      >
+        <div className="flex items-center justify-between">
+          {/* Left side - Payment method text */}
+          <span className="text-white font-medium">Pay by Credit Card</span>
           
-          <span className="text-white font-medium">Pay by Crypto</span>
+          {/* Right side - VISA logo and Change button */}
+          <div className="flex items-center space-x-3">
+            <Image src={VisaLogo} alt="Visa" width={33} height={12} />
+            <button className="text-blue-400 hover:text-blue-300 transition-colors text-sm flex items-center space-x-1">
+              <span>Change</span>
+              <span>&gt;</span>
+            </button>
+          </div>
         </div>
-        
-        <button 
-          onClick={() => changePaymentMethod('card')}
-          className="text-blue-500 hover:text-blue-400 transition-colors text-sm"
-        >
-          Change &gt;
-        </button>
       </div>
-    </div>
+      
+      <PaymentMethodDialog 
+        isOpen={isDialogOpen} 
+        onClose={() => setIsDialogOpen(false)} 
+      />
+    </>
   );
 }
