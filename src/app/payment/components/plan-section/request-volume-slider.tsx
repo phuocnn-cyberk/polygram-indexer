@@ -8,17 +8,31 @@ export function RequestVolumeSlider() {
   const [isDragging, setIsDragging] = useState(false);
   const sliderRef = useRef<HTMLDivElement>(null);
   
-  // Define volume options and their positions
+  // Define volume options and their positions on a scale of 9 (0-9)
   const volumeOptions = [1, 2, 3, 5, 7, 10];
-  const currentIndex = volumeOptions.indexOf(requestVolume);
-  const progressPercentage = (currentIndex / (volumeOptions.length - 1)) * 100;
+  const valueToPosition: { [key: number]: number } = {
+    1: 0,   // 0/9
+    2: 1,   // 1/9
+    3: 2,   // 2/9
+    5: 4,   // 4/9
+    7: 6,   // 6/9
+    10: 9   // 9/9
+  };
+  
+  const progressPercentage = (valueToPosition[requestVolume] / 9) * 100;
   
   // Find the closest volume option to a given percentage
   const findClosestVolume = useCallback((percentage: number) => {
-    const index = Math.round((percentage / 100) * (volumeOptions.length - 1));
-    const clampedIndex = Math.max(0, Math.min(index, volumeOptions.length - 1));
-    return volumeOptions[clampedIndex];
-  }, [volumeOptions]);
+    // Convert percentage back to position on scale of 9
+    const targetPosition = (percentage / 100) * 9;
+    
+    // Find the closest volume option based on position
+    return volumeOptions.reduce((closest, current) => {
+      const currentPosition = valueToPosition[current];
+      const closestPosition = valueToPosition[closest];
+      return Math.abs(currentPosition - targetPosition) < Math.abs(closestPosition - targetPosition) ? current : closest;
+    });
+  }, [volumeOptions, valueToPosition]);
   
   // Calculate percentage from mouse/touch position
   const calculatePercentage = useCallback((clientX: number) => {
@@ -126,9 +140,9 @@ export function RequestVolumeSlider() {
         
         {/* Volume Markers - positioned over the track */}
         <div className="absolute left-0 right-0 h-full flex justify-between items-center pointer-events-none">
-          {volumeOptions.map((volume, index) => {
+          {volumeOptions.map((volume) => {
             const isActive = requestVolume === volume;
-            const position = (index / (volumeOptions.length - 1)) * 100;
+            const position = (valueToPosition[volume] / 9) * 100;
             
             return (
               <div
@@ -153,12 +167,19 @@ export function RequestVolumeSlider() {
       </div>
       
       {/* Volume Labels Below */}
-      <div className="flex justify-between text-xs font-medium text-[#9CA3AF] px-1 font-raleway">
-        {volumeOptions.map((volume) => (
-          <span key={volume} className="text-center">
-            {volume}M
-          </span>
-        ))}
+      <div className="relative text-xs font-medium text-[#9CA3AF] px-1 font-raleway">
+        {volumeOptions.map((volume) => {
+          const position = (valueToPosition[volume] / 9) * 100;
+          return (
+            <span 
+              key={volume} 
+              className="absolute text-center"
+              style={{ left: `calc(${position}% - 8px)` }}
+            >
+              {volume}M
+            </span>
+          );
+        })}
       </div>
     </div>
   );

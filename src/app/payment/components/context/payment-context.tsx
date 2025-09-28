@@ -79,9 +79,9 @@ const initialState: PaymentState = {
   requestVolume: 3,
   startDate: new Date('2025-09-24'),
   basePrice: 200,
-  taxes: 0.02,
-  discount: 2.25,
-  total: 200.00,
+  taxes: 0.02, // 200 * 0.0001 = 0.02
+  discount: 0,
+  total: 200.02, // basePrice + taxes - discount = 200 + 0.02 - 0
   promoCode: '',
   isPromoValid: false,
   promoError: '',
@@ -111,7 +111,7 @@ const calculatePrice = (volume: number): number => {
 };
 
 const calculateTaxes = (subtotal: number): number => {
-  return subtotal * 0.01; // 1% tax rate
+  return subtotal * 0.0001; // 1/10,000 tax rate (0.01%)
 };
 
 const calculateTotal = (subtotal: number, taxes: number, discount: number): number => {
@@ -124,9 +124,8 @@ const validatePromoCode = async (code: string): Promise<number> => {
   await new Promise(resolve => setTimeout(resolve, 1000));
   
   const validCodes: Record<string, number> = {
-    'SAVE10': 10,
-    'WELCOME20': 20,
-    'STARTUP15': 15
+    'WELCOMEPOLY': 5,
+    'PROMOGRAM': 10
   };
   
   if (validCodes[code]) {

@@ -6,7 +6,7 @@ import { ProPlanCard } from "./pro-plan-card";
 
 export function PlanSelectionSection() {
   return (
-    <div className="space-y-0  p-6">
+    <div className="space-y-0">
       <PlanHeader />
       <ProPlanCard />
     </div>

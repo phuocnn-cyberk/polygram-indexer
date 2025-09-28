@@ -31,24 +31,28 @@ export function PriceBreakdown({ subtotal, taxes, total, discount }: PriceBreakd
       </div>
       
       {/* Discount */}
-      {discount > 0 && (
-        <div className="flex justify-between items-center">
-          <span className="text-sm text-[#AEAEAE] font-raleway">
-            Discount
-          </span>
-          <span className="text-base text-white font-raleway">
-            -${discount.toFixed(2)}
-          </span>
-        </div>
-      )}
+      <div className="flex justify-between items-center">
+        <span className="text-sm text-[#AEAEAE] font-raleway">
+          Discount
+        </span>
+        <span className="text-base text-white font-raleway">
+          -${discount.toFixed(2)}
+        </span>
+      </div>
       
       {/* Divider */}
-      <div className="w-full h-px bg-[#1E1E1E]"></div>
+      <div
+        className="w-full h-px bg-[#3A4A5A]"
+        style={{
+          background:
+            "repeating-linear-gradient(to right, #3A4A5A 0px, #3A4A5A 5px, transparent 5px, transparent 10px)",
+        }}
+      ></div>
       
       {/* Total */}
       <div className="flex justify-between items-center">
         <span className="text-base font-medium text-white font-raleway">
-          Total
+          TOTAL
         </span>
         <span className="text-lg font-semibold text-white font-raleway">
           ${total.toFixed(2)}

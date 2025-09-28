@@ -7,9 +7,17 @@ import GradientBg from "../../assets/GradientBg.png";
 import ProPlanIcon from "../../assets/ProPlanIcon.svg";
 export function ProPlanCard() {
   const { basePrice, requestVolume } = usePayment();
+  
+  // Get today's date in the format "MMM DD, YYYY"
+  const today = new Date();
+  const formattedDate = today.toLocaleDateString('en-US', {
+    month: 'short',
+    day: '2-digit',
+    year: 'numeric'
+  });
 
   return (
-    <div className="relative border border-gray-700 bg-[#15161899] rounded-2xl overflow-hidden w-full max-w-[449px]">
+    <div className="relative border border-gray-700 bg-[#151618]/60 rounded-2xl overflow-hidden w-full">
        {/* Plan Header */}
        <div className="relative flex flex-col space-y-1 mb-8 w-full">
          <Image
@@ -70,13 +78,13 @@ export function ProPlanCard() {
               Start Plan Date
             </span>
             <span className="text-sm font-semibold text-white font-raleway">
-              Sep 24, 2025
+              {formattedDate}
             </span>
           </div>
         </div>
 
         {/* Description */}
-        <div className="mt-6 text-sm text-[#AEAEAE] leading-relaxed font-raleway">
+        <div className="mt-6 text-sm text-[#AEAEAE] leading-relaxed font-raleway pb-6">
           With the Polygram Pro Plan, get 5 API keys, {requestVolume},000,000
           requests per month, up to 300 requests per second, priority support,
           plus Websockets and Webhooks.

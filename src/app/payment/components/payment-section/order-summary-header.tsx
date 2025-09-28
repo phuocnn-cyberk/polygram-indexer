@@ -13,7 +13,7 @@ export function OrderSummaryHeader() {
       </div>
       
       {/* Plan Title */}
-      <h3 className="text-lg font-semibold text-white">{selectedPlan.title}</h3>
+      <h3 className="text-lg font-semibold text-white ">{selectedPlan.title}</h3>
     </div>
   );
 }

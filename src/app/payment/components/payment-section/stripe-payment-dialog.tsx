@@ -36,22 +36,9 @@ function PaymentForm({ onSuccess, onError, onClose, amount }: PaymentFormProps) 
   };
 
 
-  // Debug Stripe and Elements loading
-  useEffect(() => {
-    console.log('Stripe loaded:', !!stripe);
-    console.log('Elements loaded:', !!elements);
-    
-    // If Stripe is loaded but we're still showing skeleton, try to show payment element
-    if (stripe && elements && isPaymentElementLoading) {
-      console.log('Stripe and Elements are ready, showing payment element');
-      setIsPaymentElementLoading(false);
-    }
-  }, [stripe, elements, isPaymentElementLoading]);
-
   // Fallback timeout to show payment element even if onReady doesn't fire
   useEffect(() => {
     const timeout = setTimeout(() => {
-      console.log('Payment element timeout - showing anyway');
       setIsPaymentElementLoading(false);
     }, 3000); // 3 second timeout
 

@@ -36,7 +36,7 @@ export function PromoCodeSection() {
         <button
           onClick={handleApply}
           disabled={isProcessing || !promoCode.trim()}
-          className={`px-4 py-3 rounded-md text-sm font-medium transition-colors font-raleway ${
+          className={`w-[70px] py-3 rounded-md text-sm font-medium transition-colors font-raleway ${
             isProcessing || !promoCode.trim()
               ? 'bg-[#333333] text-[#666666] cursor-not-allowed'
               : 'bg-[#444444] hover:bg-[#555555] text-[#A6A6A6]'
