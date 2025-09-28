@@ -1,3 +1,4 @@
-export { ConfirmPaymentButton } from './confirm-payment-button';
-export { StripePaymentDialog } from './stripe-payment-dialog';
-export { PaymentResultDialog } from './payment-result-dialog';
+export { PaymentSummary } from './payment-summary';
+export { PromoCodeSection } from './promo-code-section';
+export { PriceBreakdown } from './price-breakdown';
+export { PaymentButton } from './payment-button';

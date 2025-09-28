@@ -1,38 +1,68 @@
 'use client';
 
-import { usePayment } from '../context/payment-context';
+interface PriceBreakdownProps {
+  subtotal: number;
+  taxes: number;
+  total: number;
+  discount: number;
+}
 
-export function PriceBreakdown() {
-  const { basePrice, taxes, discount, total } = usePayment();
-  
+export function PriceBreakdown({ subtotal, taxes, total, discount }: PriceBreakdownProps) {
   return (
-    <div className="space-y-4">
+    <div className="space-y-4 mb-6">
       {/* Subtotal */}
       <div className="flex justify-between items-center">
-        <span className="text-sm text-gray-400">Subtotal</span>
-        <span className="text-sm text-gray-400">${basePrice.toFixed(2)}</span>
+        <span className="text-sm text-[#999999] font-raleway">
+          Subtotal
+        </span>
+        <span className="text-base text-white font-raleway">
+          ${subtotal.toFixed(2)}
+        </span>
       </div>
       
       {/* Taxes */}
       <div className="flex justify-between items-center">
-        <span className="text-sm text-gray-400">Taxes</span>
-        <span className="text-sm text-gray-400">${taxes.toFixed(2)}</span>
+        <span className="text-sm text-[#999999] font-raleway">
+          Taxes
+        </span>
+        <span className="text-base text-white font-raleway">
+          ${taxes.toFixed(2)}
+        </span>
       </div>
       
-      {/* Discounts */}
+      {/* Discount */}
       {discount > 0 && (
         <div className="flex justify-between items-center">
-          <span className="text-sm text-gray-400">Discounts</span>
-          <span className="text-sm text-green-500">-${discount.toFixed(2)}</span>
+          <span className="text-sm text-[#AEAEAE] font-raleway">
+            Discount
+          </span>
+          <span className="text-base text-white font-raleway">
+            -${discount.toFixed(2)}
+          </span>
         </div>
       )}
       
-      {/* Total Separator */}
-      <div className="border-t border-gray-700 pt-4">
-        <div className="flex justify-between items-center">
-          <span className="text-lg font-bold text-white">TOTAL</span>
-          <span className="text-xl font-bold text-white">${total.toFixed(2)}</span>
+      {/* Divider */}
+      <div className="w-full h-px bg-[#1E1E1E]"></div>
+      
+      {/* Total */}
+      <div className="flex justify-between items-center">
+        <span className="text-base font-medium text-white font-raleway">
+          Total
+        </span>
+        <span className="text-lg font-semibold text-white font-raleway">
+          ${total.toFixed(2)}
+        </span>
+      </div>
+      
+      {/* Security Badge */}
+      <div className="flex items-center justify-center space-x-2 pt-2">
+        <div className="w-4 h-4 bg-[#2196F3] rounded-sm flex items-center justify-center">
+          <div className="w-2 h-2 bg-white rounded-sm"></div>
         </div>
+        <span className="text-xs text-[#AEAEAE] font-raleway">
+          Secure payment
+        </span>
       </div>
     </div>
   );

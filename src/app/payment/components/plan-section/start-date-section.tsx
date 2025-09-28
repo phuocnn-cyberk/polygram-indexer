@@ -14,13 +14,13 @@ export function StartDateSection() {
   };
   
   return (
-    <div className="space-y-2">
-      <div className="text-sm font-medium text-gray-400">
+    <div className="flex justify-between items-center py-2">
+      <span className="text-sm text-[#AEAEAE] font-raleway">
         Start Plan Date
-      </div>
-      <div className="text-lg font-semibold text-white">
+      </span>
+      <span className="text-sm font-semibold text-white font-raleway">
         {formatDate(startDate)}
-      </div>
+      </span>
     </div>
   );
 }

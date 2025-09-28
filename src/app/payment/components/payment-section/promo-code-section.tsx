@@ -4,42 +4,54 @@ import { useState } from 'react';
 import { usePayment } from '../context/payment-context';
 
 export function PromoCodeSection() {
-  const [code, setCode] = useState('');
+  const [promoCode, setPromoCode] = useState('');
   const { applyPromoCode, isProcessing, promoError, isPromoValid } = usePayment();
   
   const handleApply = async () => {
-    if (code.trim()) {
-      await applyPromoCode(code.trim());
+    if (promoCode.trim()) {
+      await applyPromoCode(promoCode.trim());
     }
   };
   
   return (
-    <div className="space-y-2">
-      <div className="flex gap-2">
-        <input
-          type="text"
-          placeholder="Add Promocode"
-          value={code}
-          onChange={(e) => setCode(e.target.value)}
-          className="flex-1 px-4 py-3 bg-gray-700 border border-gray-600 rounded-lg text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent"
-        />
+    <div className="mb-6">
+      <div className="flex space-x-2">
+        {/* Promo Code Input */}
+        <div className={`flex-1 rounded-md px-3 py-3 ${
+          isPromoValid ? 'bg-green-900/20 border border-green-500' : 
+          promoError ? 'bg-red-900/20 border border-red-500' : 
+          'bg-[#212121]'
+        }`}>
+          <input
+            type="text"
+            placeholder="Add Promocode"
+            value={promoCode}
+            onChange={(e) => setPromoCode(e.target.value)}
+            className="w-full bg-transparent text-[#636363] placeholder-[#636363] text-sm focus:outline-none font-raleway"
+            disabled={isProcessing}
+          />
+        </div>
+        
+        {/* Apply Button */}
         <button
           onClick={handleApply}
-          disabled={isProcessing || !code.trim()}
-          className="px-4 py-3 border border-blue-500 text-blue-500 rounded-lg hover:bg-blue-500 hover:text-white transition-colors disabled:opacity-50 disabled:cursor-not-allowed"
+          disabled={isProcessing || !promoCode.trim()}
+          className={`px-4 py-3 rounded-md text-sm font-medium transition-colors font-raleway ${
+            isProcessing || !promoCode.trim()
+              ? 'bg-[#333333] text-[#666666] cursor-not-allowed'
+              : 'bg-[#444444] hover:bg-[#555555] text-[#A6A6A6]'
+          }`}
         >
-          {isProcessing ? 'Applying...' : 'Apply'}
+          {isProcessing ? '...' : 'Apply'}
         </button>
       </div>
       
+      {/* Error/Success Messages */}
       {promoError && (
-        <p className="text-red-500 text-sm">{promoError}</p>
+        <p className="text-red-400 text-xs mt-2 font-raleway">{promoError}</p>
       )}
-      
       {isPromoValid && (
-        <p className="text-green-500 text-sm">
-          Promo code applied successfully!
-        </p>
+        <p className="text-green-400 text-xs mt-2 font-raleway">Promo code applied successfully!</p>
       )}
     </div>
   );

@@ -1,7 +1,7 @@
 'use client';
 
 import { PlanSelectionSection } from './plan-section/plan-selection-section';
-import { OrderSummarySection } from './payment-section/order-summary-section';
+import { PaymentSummary } from './payment-section/payment-summary';
 
 export function MainContentArea() {
   return (
@@ -13,9 +13,9 @@ export function MainContentArea() {
             <PlanSelectionSection />
           </div>
           
-          {/* Right Column - Order Summary */}
+          {/* Right Column - Payment Summary */}
           <div>
-            <OrderSummarySection />
+            <PaymentSummary />
           </div>
         </div>
       </div>
