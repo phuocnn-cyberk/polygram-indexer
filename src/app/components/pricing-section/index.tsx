@@ -10,7 +10,7 @@ import { cardVariants, containerVariants } from "@/lib/animations";
 
 export const PricingSection: FC = () => {
   return (
-    <section className="w-full bg-[#111111] md:py-20">
+    <section className="w-full bg-[#111111] py-[76px] md:py-20">
       <div className="container mx-auto flex flex-col items-center gap-8 md:gap-[93px] px-4 md:px-0">
         <FadeIn className="bg-gradient-to-r from-[#A6A6A6] via-[#FFFFFF] to-[#999999] bg-clip-text text-center text-2xl md:text-[64px] font-medium text-transparent lg:text-[64px] lg:leading-[75px]">
           Simple and Affordable <br /> Pricing Plan
