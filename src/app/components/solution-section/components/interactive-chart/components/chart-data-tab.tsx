@@ -80,7 +80,10 @@ export const ChartDataTab: FC = () => {
             $4.09
           </p>
         </div>
-        <TokenSelector />
+        <div className="flex items-center gap-4">
+          <p className="font-satoshi text-sm font-medium text-white">UTC - 0</p>
+          <TokenSelector />
+        </div>
       </div>
       <div className="mt-4 h-[390px]">
         <ResponsiveContainer width="100%" height="100%">
