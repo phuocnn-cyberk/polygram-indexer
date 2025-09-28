@@ -71,7 +71,7 @@ export const Footer: FC = () => {
                   liquidity, and wallet activity.
                 </p>
               </FadeIn>
-              <div className="grid grid-cols-3 text-white text-lg border-b border-[#1E1E1E]">
+              <div className="grid grid-cols-3 text-white text-xs md:text-lg border-b border-[#1E1E1E]">
                 <FadeIn className="flex items-center justify-center h-24 border-r border-[#1E1E1E]">
                   Pricing
                 </FadeIn>
@@ -82,7 +82,7 @@ export const Footer: FC = () => {
                   Documentation
                 </FadeIn>
               </div>
-              <div className="grid grid-cols-3 h-24 text-white text-lg">
+              <div className="grid grid-cols-3 h-24 text-white text-xs md:text-lg">
                 <FadeIn className="col-span-2 p-1.5 border-r border-[#1E1E1E]">
                   <Stripes count={55} lineClassName="bg-[#1E1E1E]" />
                 </FadeIn>
@@ -92,7 +92,7 @@ export const Footer: FC = () => {
               </div>
             </div>
           </div>
-          <FadeIn className="w-full pt-20 pb-11 text-center">
+          <FadeIn className="w-full pt-20 pb-11 text-sm md:text-base text-center">
             <span className="text-[#929292]">
               Polygram ©2025 All rights reserved
             </span>
