@@ -1,6 +1,6 @@
 'use client';
 
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { loadStripe } from '@stripe/stripe-js';
 import {
   Elements,
@@ -11,6 +11,9 @@ import {
 
 // Initialize Stripe with your publishable key (test key for demo)
 const stripePromise = loadStripe(process.env.NEXT_PUBLIC_STRIPE_PUBLISHABLE_KEY || 'pk_test_TYooMQauvdEDq54NiTphI7jx');
+
+// Debug Stripe key
+console.log('Stripe key:', process.env.NEXT_PUBLIC_STRIPE_PUBLISHABLE_KEY || 'Using fallback test key');
 
 interface PaymentFormProps {
   onSuccess: (paymentMethodId: string) => void;
@@ -24,6 +27,65 @@ function PaymentForm({ onSuccess, onError, onClose, amount }: PaymentFormProps) 
   const elements = useElements();
   const [isProcessing, setIsProcessing] = useState(false);
   const [message, setMessage] = useState<string | null>(null);
+  const [isPaymentElementLoading, setIsPaymentElementLoading] = useState(true);
+
+  // Handle payment element ready
+  const handlePaymentElementReady = () => {
+    console.log('Payment element is ready');
+    setIsPaymentElementLoading(false);
+  };
+
+
+  // Debug Stripe and Elements loading
+  useEffect(() => {
+    console.log('Stripe loaded:', !!stripe);
+    console.log('Elements loaded:', !!elements);
+    
+    // If Stripe is loaded but we're still showing skeleton, try to show payment element
+    if (stripe && elements && isPaymentElementLoading) {
+      console.log('Stripe and Elements are ready, showing payment element');
+      setIsPaymentElementLoading(false);
+    }
+  }, [stripe, elements, isPaymentElementLoading]);
+
+  // Fallback timeout to show payment element even if onReady doesn't fire
+  useEffect(() => {
+    const timeout = setTimeout(() => {
+      console.log('Payment element timeout - showing anyway');
+      setIsPaymentElementLoading(false);
+    }, 3000); // 3 second timeout
+
+    return () => clearTimeout(timeout);
+  }, []);
+
+  // Skeleton component for loading state
+  const PaymentElementSkeleton = () => (
+    <div className="space-y-4">
+      {/* Card number skeleton */}
+      <div className="space-y-2">
+        <div className="h-4 bg-gray-200 rounded w-20 animate-pulse"></div>
+        <div className="h-12 bg-gray-200 rounded animate-pulse"></div>
+      </div>
+      
+      {/* Expiry and CVC skeleton */}
+      <div className="grid grid-cols-2 gap-4">
+        <div className="space-y-2">
+          <div className="h-4 bg-gray-200 rounded w-16 animate-pulse"></div>
+          <div className="h-12 bg-gray-200 rounded animate-pulse"></div>
+        </div>
+        <div className="space-y-2">
+          <div className="h-4 bg-gray-200 rounded w-12 animate-pulse"></div>
+          <div className="h-12 bg-gray-200 rounded animate-pulse"></div>
+        </div>
+      </div>
+      
+      {/* Additional fields skeleton */}
+      <div className="space-y-2">
+        <div className="h-4 bg-gray-200 rounded w-24 animate-pulse"></div>
+        <div className="h-12 bg-gray-200 rounded animate-pulse"></div>
+      </div>
+    </div>
+  );
 
   const handleSubmit = async (event: React.FormEvent) => {
     event.preventDefault();
@@ -91,11 +153,16 @@ function PaymentForm({ onSuccess, onError, onClose, amount }: PaymentFormProps) 
           {/* Stripe Payment Form */}
           <form onSubmit={handleSubmit} className="space-y-6">
             <div className="space-y-4">
-              <PaymentElement 
-                options={{
-                  layout: 'tabs'
-                }}
-              />
+              {isPaymentElementLoading ? (
+                <PaymentElementSkeleton />
+              ) : (
+                <PaymentElement 
+                  options={{
+                    layout: 'tabs'
+                  }}
+                  onReady={handlePaymentElementReady}
+                />
+              )}
             </div>
 
             {/* Error Message */}
@@ -107,13 +174,18 @@ function PaymentForm({ onSuccess, onError, onClose, amount }: PaymentFormProps) 
             {/* Submit Button */}
             <button
               type="submit"
-              disabled={isProcessing || !stripe}
+              disabled={isProcessing || !stripe || isPaymentElementLoading}
               className="w-full bg-blue-600 hover:bg-blue-700 disabled:bg-blue-400 disabled:cursor-not-allowed text-white font-semibold py-3 px-4 rounded-lg transition-colors duration-200"
             >
               {isProcessing ? (
                 <div className="flex items-center justify-center">
                   <div className="animate-spin rounded-full h-4 w-4 border-b-2 border-white mr-2"></div>
                   Processing...
+                </div>
+              ) : isPaymentElementLoading ? (
+                <div className="flex items-center justify-center">
+                  <div className="animate-spin rounded-full h-4 w-4 border-b-2 border-white mr-2"></div>
+                  Loading...
                 </div>
               ) : (
                 `Pay $${amount.toFixed(2)}`
