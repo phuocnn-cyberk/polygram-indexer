@@ -18,7 +18,7 @@ export const ButtonGroup: FC = () => {
       </Button>
       <Button
         variant="ghost"
-        className="text-[10px] md:text-sm text-white uppercase bg-[#1F2124] cursor-pointer font-semibold md:h-12 h-6 md:btn-discover hover:bg-[#1F2124]"
+        className="text-[10px] md:text-sm text-white uppercase bg-[#1F2124] cursor-pointer font-semibold md:h-12 h-6 btn-discover hover:bg-[#1F2124]"
       >
         Scroll to Discover
       </Button>
