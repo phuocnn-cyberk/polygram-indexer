@@ -1,0 +1,18 @@
+<svg width="48" height="48" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M24 1.47961C36.9883 1.47961 47.4998 11.7911 47.5 24.4894C47.5 37.1879 36.9885 47.5001 24 47.5001C11.0115 47.5001 0.5 37.1879 0.5 24.4894C0.500242 11.7911 11.0117 1.47961 24 1.47961Z" stroke="white" stroke-opacity="0.2"/>
+<path d="M15 3.24603C17.9136 2.06864 21.0353 1.46494 24.187 1.46938C27.3388 1.47383 30.4587 2.08635 33.3688 3.27196" stroke="#417EC0"/>
+<ellipse cx="24" cy="24.4898" rx="20" ry="19.5918" fill="white" fill-opacity="0.1"/>
+<rect x="15" y="15.6735" width="18" height="17.6327" rx="4" fill="url(#paint0_radial_480_2022)"/>
+<rect x="15.5" y="16.1735" width="17" height="16.6327" rx="3.5" stroke="url(#paint1_linear_480_2022)" stroke-opacity="0.4"/>
+<path d="M24 5.87756L26.5981 1.4694H21.4019L24 5.87756Z" fill="#417EC0"/>
+<defs>
+<radialGradient id="paint0_radial_480_2022" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(24 24.4898) rotate(90) scale(8.81633 9)">
+<stop stop-color="#5D9DE2"/>
+<stop offset="1" stop-color="#417EC0"/>
+</radialGradient>
+<linearGradient id="paint1_linear_480_2022" x1="24" y1="15.6735" x2="24" y2="33.3061" gradientUnits="userSpaceOnUse">
+<stop stop-color="#B6C8E7"/>
+<stop offset="1" stop-color="#74A5F7"/>
+</linearGradient>
+</defs>
+</svg>

@@ -30,9 +30,7 @@ export default function RootLayout({
       <body
         className={`${raleway.variable} ${satoshi.variable} font-sans antialiased`}
       >
-        <Header />
         {children}
-        <Footer />
       </body>
     </html>
   );
