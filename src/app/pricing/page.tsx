@@ -6,6 +6,7 @@ import { FaqSection } from "@/app/components/faq-section";
 import { LogoCloud } from "@/components/common/logo-cloud";
 import { LOGOS } from "@/components/common/logo-cloud/constant";
 import { FadeIn } from "@/components/common/fade-in";
+import { Footer } from "@/app/components/footer";
 
 const PricingPage: FC = () => {
   return (
@@ -26,6 +27,7 @@ const PricingPage: FC = () => {
           </div>
         </section>
         <FaqSection />
+        <Footer />
       </div>
     </main>
   );
