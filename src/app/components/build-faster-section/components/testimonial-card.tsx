@@ -1,15 +1,10 @@
 import { cn } from "@/lib/utils";
 import Image from "next/image";
 import { FC } from "react";
-import { Button } from "@/components/ui/button";
-import { ArrowLeft, ArrowRight } from "lucide-react";
 
 export const TestimonialCard: FC<{
   className?: string;
-  showControls?: boolean;
-  onNext?: () => void;
-  onPrevious?: () => void;
-}> = ({ className, showControls, onNext, onPrevious }) => {
+}> = ({ className }) => {
   return (
     <div
       className={cn(
