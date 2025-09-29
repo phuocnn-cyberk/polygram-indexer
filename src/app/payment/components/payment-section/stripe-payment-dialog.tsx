@@ -108,20 +108,48 @@ function PaymentForm({
         elements,
       });
 
+      console.log("=== Payment Method Creation Result ===");
+      console.log("Error:", error);
+      console.log("Payment Method:", paymentMethod);
+
       if (error) {
-        console.log("Payment error:", error);
+        console.log("❌ Payment error:", error);
         setMessage(error.message || "An error occurred");
 
         // Don't call onError for any errors - just show the message in the dialog
         // This keeps the dialog open so user can fix their input
         return;
       } else if (paymentMethod) {
+        console.log("✅ Payment Method created successfully:", paymentMethod.id);
+        console.log("Payment Method details:", {
+          id: paymentMethod.id,
+          type: paymentMethod.type,
+          card: paymentMethod.card,
+          billing_details: paymentMethod.billing_details
+        });
+
+        // Check for test card numbers that should simulate failures
+        const cardLast4 = paymentMethod.card?.last4;
+        console.log("🔍 Card last4 digits:", cardLast4);
+        
+        // Simulate failures for specific test card numbers
+        const declinedCardNumbers = ['0002', '9995', '0069', '0127', '0119', '0107', '0085'];
+        const isDeclinedCard = declinedCardNumbers.includes(cardLast4 || '');
+        
+        if (isDeclinedCard) {
+          console.log("❌ Simulating failure for declined test card:", cardLast4);
+          setMessage("This card has been declined. Please try a different payment method.");
+          return; // Don't call onSuccess, just show error message
+        }
+
         // Simulate processing delay
         await new Promise((resolve) => setTimeout(resolve, 1500));
 
         // Success - pass the payment method ID to parent
-        console.log("Payment Method created:", paymentMethod.id);
+        console.log("🚀 Calling onSuccess with payment method ID:", paymentMethod.id);
         onSuccess(paymentMethod.id);
+      } else {
+        console.log("⚠️ No error and no payment method - unexpected state");
       }
     } catch (error) {
       console.log("Catch error:", error);
