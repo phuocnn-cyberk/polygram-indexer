@@ -95,25 +95,38 @@ function PaymentForm({
     setMessage(null);
 
     try {
-      // Create payment method using Stripe Elements
+      // First, submit the elements to validate the form
+      const { error: submitError } = await elements.submit();
+
+      if (submitError) {
+        //handle by stripe
+        return;
+      }
+
+      // Then create payment method using Stripe Elements
       const { error, paymentMethod } = await stripe.createPaymentMethod({
         elements,
       });
 
       if (error) {
+        console.log("Payment error:", error);
         setMessage(error.message || "An error occurred");
-        onError(error.message || "Payment failed");
+
+        // Don't call onError for any errors - just show the message in the dialog
+        // This keeps the dialog open so user can fix their input
+        return;
       } else if (paymentMethod) {
         // Simulate processing delay
         await new Promise((resolve) => setTimeout(resolve, 1500));
 
         // Success - pass the payment method ID to parent
-        // In a real implementation, you would send this to your backend
         console.log("Payment Method created:", paymentMethod.id);
         onSuccess(paymentMethod.id);
       }
-    } catch {
-      const errorMessage = "An unexpected error occurred";
+    } catch (error) {
+      console.log("Catch error:", error);
+      const errorMessage =
+        error instanceof Error ? error.message : "An unexpected error occurred";
       setMessage(errorMessage);
       onError(errorMessage);
     } finally {
@@ -242,12 +255,13 @@ export function StripePaymentDialog({
     },
   };
 
-  // Use mode: 'payment' for test mode instead of clientSecret
+  // Use mode: 'setup' for creating payment methods without processing payment
   const options = {
-    mode: "payment" as const,
-    amount: Math.round(amount * 100), // Convert to cents
+    mode: "setup" as const,
     currency: "usd",
+    paymentMethodCreation: "manual" as const,
     appearance,
+    loader: "auto" as const,
   };
 
   return (
