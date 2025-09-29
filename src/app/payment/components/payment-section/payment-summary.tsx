@@ -6,6 +6,7 @@ import { PromoCodeSection } from './promo-code-section';
 import { PriceBreakdown } from './price-breakdown';
 import { PaymentButton } from './payment-button';
 import { StripePaymentDialog } from './stripe-payment-dialog';
+import { PaymentResultDialog } from './payment-result-dialog';
 import CubeIcon from '../../assets/CubeIcon.svg';
 
 export function PaymentSummary() {
@@ -17,7 +18,10 @@ export function PaymentSummary() {
     showPaymentDialog, 
     closePaymentDialog, 
     handlePaymentSuccess, 
-    handlePaymentError 
+    handlePaymentError,
+    showPaymentResult,
+    paymentResult,
+    closePaymentResult
   } = usePayment();
   
   return (
@@ -58,6 +62,16 @@ export function PaymentSummary() {
         onClose={closePaymentDialog}
         onSuccess={handlePaymentSuccess}
         onError={handlePaymentError}
+        amount={total}
+      />
+
+      {/* Payment Result Dialog */}
+      <PaymentResultDialog
+        isOpen={showPaymentResult}
+        onClose={closePaymentResult}
+        isSuccess={paymentResult.isSuccess}
+        paymentMethodId={paymentResult.paymentMethodId}
+        errorMessage={paymentResult.errorMessage}
         amount={total}
       />
     </>
