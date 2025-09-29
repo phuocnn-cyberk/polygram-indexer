@@ -41,13 +41,25 @@ export const Footer: FC = () => {
                   </p>
                 </FadeIn>
                 <FadeIn className="flex items-center justify-center border-b border-r border-[#1E1E1E]">
-                  <span className="text-lg text-white">Pricing</span>
+                  <a
+                    href="/pricing"
+                    className="text-lg text-white hover:text-gray-300 transition-colors cursor-pointer"
+                  >
+                    Pricing
+                  </a>
                 </FadeIn>
                 <FadeIn className="flex items-center justify-center border-b border-r border-[#1E1E1E]">
                   <span className="text-lg text-white">About</span>
                 </FadeIn>
                 <FadeIn className="flex items-center justify-center border-b border-[#1E1E1E]">
-                  <span className="text-lg text-white">Documentation</span>
+                  <a
+                    href="https://polygram-2.gitbook.io/polygram/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="text-lg text-white hover:text-gray-300 transition-colors cursor-pointer"
+                  >
+                    Documentation
+                  </a>
                 </FadeIn>
                 <FadeIn className="col-span-2 border-r border-[#1E1E1E] p-1.5">
                   <Stripes count={55} lineClassName="bg-[#1E1E1E]" />
@@ -73,13 +85,25 @@ export const Footer: FC = () => {
               </FadeIn>
               <div className="grid grid-cols-3 text-white text-xs md:text-lg border-b border-[#1E1E1E]">
                 <FadeIn className="flex items-center justify-center h-24 border-r border-[#1E1E1E]">
-                  Pricing
+                  <a
+                    href="/pricing"
+                    className="hover:text-gray-300 transition-colors cursor-pointer"
+                  >
+                    Pricing
+                  </a>
                 </FadeIn>
                 <FadeIn className="flex items-center justify-center h-24 border-r border-[#1E1E1E]">
                   About
                 </FadeIn>
                 <FadeIn className="flex items-center justify-center h-24">
-                  Documentation
+                  <a
+                    href="https://polygram-2.gitbook.io/polygram/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="hover:text-gray-300 transition-colors cursor-pointer"
+                  >
+                    Documentation
+                  </a>
                 </FadeIn>
               </div>
               <div className="grid grid-cols-3 h-24 text-white text-xs md:text-lg">

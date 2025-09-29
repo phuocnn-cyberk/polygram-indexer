@@ -49,7 +49,10 @@ export const BuildFasterSection: FC = () => {
             low-latency, high-performance on-chain data in a single, easy-to-use
             API.
           </FadeInBlock>
-          <Button className="mt-8 h-12 gap-4 bg-[#2172E6] px-4 uppercase text-white hover:bg-[#2172E6] hover:shadow-[0_0_25px_0_rgba(33,114,230,0.5)]">
+          <Button 
+            className="mt-8 h-12 gap-4 bg-[#2172E6] px-4 uppercase text-white hover:bg-[#2172E6] hover:shadow-[0_0_25px_0_rgba(33,114,230,0.5)] cursor-pointer"
+            onClick={() => window.open('https://polygram-2.gitbook.io/polygram/', '_blank', 'noopener,noreferrer')}
+          >
             <span>Docs</span>
             <div className="flex h-8 w-8 items-center justify-center rounded bg-white">
               <Image
