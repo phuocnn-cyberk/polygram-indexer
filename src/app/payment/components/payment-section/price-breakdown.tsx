@@ -51,10 +51,10 @@ export function PriceBreakdown({ subtotal, taxes, total, discount }: PriceBreakd
       
       {/* Total */}
       <div className="flex justify-between items-center">
-        <span className="text-base font-medium text-white font-raleway">
+        <span className="text-base text-white font-raleway">
           TOTAL
         </span>
-        <span className="text-lg font-semibold text-white font-raleway">
+        <span className="text-2xl font-semibold text-white font-raleway">
           ${total.toFixed(2)}
         </span>
       </div>

@@ -18,7 +18,7 @@ export function StartDateSection() {
       <span className="text-sm text-[#AEAEAE] font-raleway">
         Start Plan Date
       </span>
-      <span className="text-sm font-semibold text-white font-raleway">
+      <span className="text-base font-semibold text-white font-raleway">
         {formatDate(startDate)}
       </span>
     </div>

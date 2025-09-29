@@ -118,7 +118,7 @@ export function RequestVolumeSlider() {
   return (
     <div className="space-y-3">
       {/* Slider Label */}
-      <div className="text-sm font-medium text-[#F3F4F6] font-raleway">
+      <div className="text-base font-medium text-[#AEAEAE] font-satoshi">
         {requestVolume}M requests
       </div>
       
@@ -136,6 +136,24 @@ export function RequestVolumeSlider() {
             className="absolute top-0 left-0 h-1.5 bg-[#2196F3] rounded-full transition-all duration-200 ease-out"
             style={{ width: `${progressPercentage}%` }}
           ></div>
+          
+          {/* All dividers - positioned once, color changes based on fill state */}
+          {volumeOptions.map((volume) => {
+            const position = (valueToPosition[volume] / 9) * 100;
+            // Skip dividers at start and end
+            if (position <= 0 || position >= 100) return null;
+            
+            const isInFilledPortion = position <= progressPercentage;
+            const dividerColor = isInFilledPortion ? 'bg-black' : 'bg-[#2196F3]';
+            
+            return (
+              <div
+                key={`divider-${volume}`}
+                className={`absolute top-0 w-px h-full ${dividerColor}`}
+                style={{ left: `${position}%` }}
+              />
+            );
+          })}
         </div>
         
         {/* Volume Markers - positioned over the track */}
@@ -167,7 +185,7 @@ export function RequestVolumeSlider() {
       </div>
       
       {/* Volume Labels Below */}
-      <div className="relative text-xs font-medium text-[#9CA3AF] px-1 font-raleway">
+      <div className="relative text-xs font-medium text-[#9CA3AF] px-1 font-satoshi">
         {volumeOptions.map((volume) => {
           const position = (valueToPosition[volume] / 9) * 100;
           return (
