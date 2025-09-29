@@ -32,7 +32,7 @@ export function PaymentSummary() {
             height={44}
             className="flex-shrink-0 w-11 h-11"
           />
-          <div className="text-2xl font-bold text-white font-satoshi">
+          <div className="text-xl text-white font-raleway">
             PRO PLAN
           </div>
         </div>

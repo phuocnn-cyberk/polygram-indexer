@@ -2,7 +2,7 @@
 
 export function TermsDisclaimer() {
   return (
-    <p className="text-xs text-gray-500 text-center leading-relaxed">
+    <p className="text-xs text-gray-500 text-center leading-relaxed font-raleway">
       By clicking &apos;Confirm and pay&apos; you agree to the Terms and Conditions.
     </p>
   );

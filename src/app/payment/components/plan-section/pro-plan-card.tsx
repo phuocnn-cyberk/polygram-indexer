@@ -37,10 +37,10 @@ export function ProPlanCard() {
              className="flex-shrink-0 mr-6"
            />
            <div className="flex flex-col space-y-1">
-             <div className="text-4xl font-bold text-white font-satoshi">
-               Pro Plan
+             <div className="text-xl text-white font-raleway">
+               PRO PLAN
              </div>
-             <div className="text-sm text-[#AEAEAE] font-raleway">
+             <div className="text-sm text-[#AEAEAE] font-satoshi">
                Best for teams & startups
              </div>
            </div>
@@ -49,10 +49,10 @@ export function ProPlanCard() {
       <div className="px-6">
         {/* Price Display */}
         <div className="relative mb-8">
-          <div className="text-4xl font-bold text-white mb-1 font-satoshi">
+          <div className="font-bold text-white mb-1 font-satoshi" style={{ fontSize: '48px' }}>
             ${basePrice}
           </div>
-          <div className="flex items-center space-x-1 text-sm text-[#AEAEAE] font-raleway">
+          <div className="flex items-center space-x-1 text-base text-[#AEAEAE] font-satoshi">
             <span>{requestVolume} million requests</span>
             <span>/</span>
             <span>per month</span>

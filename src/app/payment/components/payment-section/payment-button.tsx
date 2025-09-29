@@ -15,7 +15,7 @@ export function PaymentButton() {
   };
   
   return (
-    <div className="space-y-4">
+    <div className="space-y-4 border border-[#1E1E1E] rounded-[12px] p-4">
       {/* Payment Method Selection */}
       <PaymentMethodCard />
       

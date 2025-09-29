@@ -118,7 +118,7 @@ export function RequestVolumeSlider() {
   return (
     <div className="space-y-3">
       {/* Slider Label */}
-      <div className="text-sm font-medium text-[#F3F4F6] font-raleway">
+      <div className="text-base font-medium text-[#AEAEAE] font-satoshi">
         {requestVolume}M requests
       </div>
       
@@ -167,7 +167,7 @@ export function RequestVolumeSlider() {
       </div>
       
       {/* Volume Labels Below */}
-      <div className="relative text-xs font-medium text-[#9CA3AF] px-1 font-raleway">
+      <div className="relative text-xs font-medium text-[#9CA3AF] px-1 font-satoshi">
         {volumeOptions.map((volume) => {
           const position = (valueToPosition[volume] / 9) * 100;
           return (
