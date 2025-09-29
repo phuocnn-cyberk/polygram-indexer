@@ -26,6 +26,10 @@ const MENU_LIST = [
     path: "/pricing",
   },
   {
+    label: "Docs",
+    path: "https://polygram-2.gitbook.io/polygram/",
+  },
+  {
     label: "Blog",
     path: "#",
   },
@@ -74,9 +78,15 @@ export const Header: FC = () => {
       <div className="hidden lg:flex items-center">
         <nav className="flex items-center bg-[#18181A] rounded-lg p-2">
           {MENU_LIST.map((item) => (
-            <Link key={item.label} href={item.path}>
-              <MenuItem>{item.label}</MenuItem>
-            </Link>
+            item.path.startsWith('http') ? (
+              <a key={item.label} href={item.path} target="_blank" rel="noopener noreferrer">
+                <MenuItem>{item.label}</MenuItem>
+              </a>
+            ) : (
+              <Link key={item.label} href={item.path}>
+                <MenuItem>{item.label}</MenuItem>
+              </Link>
+            )
           ))}
           <Button className="bg-[#2172E6] text-base h-10 btn-discover hover:text-black text-white">
             Get started
@@ -93,9 +103,15 @@ export const Header: FC = () => {
           <DropdownMenuContent className="mr-4 w-56 border-none bg-[#18181A] text-white">
             {MENU_LIST.map((item) => (
               <DropdownMenuItem key={item.label} asChild>
-                <Link href={item.path} className="w-full">
-                  {item.label}
-                </Link>
+                {item.path.startsWith('http') ? (
+                  <a href={item.path} target="_blank" rel="noopener noreferrer" className="w-full">
+                    {item.label}
+                  </a>
+                ) : (
+                  <Link href={item.path} className="w-full">
+                    {item.label}
+                  </Link>
+                )}
               </DropdownMenuItem>
             ))}
             <DropdownMenuItem>
