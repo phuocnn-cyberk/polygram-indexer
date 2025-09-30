@@ -3,34 +3,28 @@ import Image from "next/image";
 
 const LOGO_LIST = [
   {
-    src: "/images/partner-logos/kyros-ventures-logo.png",
-    alt: "Kyros Ventures",
+    src: "icons/gamicard-logo.svg",
+    alt: "Gamicard",
     width: 121,
     height: 68,
   },
   {
-    src: "/images/partner-logos/caladanloho-logo.png",
-    alt: "Caladan",
-    width: 128,
-    height: 72,
-  },
-  {
-    src: "/images/partner-logos/presto-logo.png",
-    alt: "Presto",
-    width: 142,
-    height: 80,
-  },
-  {
-    src: "/images/partner-logos/tribe-logo.png",
-    alt: "Tribe",
-    width: 142,
-    height: 80,
-  },
-  {
-    src: "/images/partner-logos/trive-logo.png",
-    alt: "Trive",
-    width: 124,
+    src: "icons/amaterasu.svg",
+    alt: "Amaterasu",
+    width: 48,
     height: 48,
+  },
+  {
+    src: "icons/asterix-logo.svg",
+    alt: "Asterix",
+    width: 236,
+    height: 38,
+  },
+  {
+    src: "icons/nexium-logo.svg",
+    alt: "Nexium",
+    width: 138,
+    height: 20,
   },
 ];
 
