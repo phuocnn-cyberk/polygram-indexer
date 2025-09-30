@@ -26,7 +26,7 @@ export const HeroSection: FC = () => {
           Blockchain Indexing Without the Headaches
         </FadeInBlock>
         <div className="w-px lg:h-24 h-12 bg-gradient-to-b from-[#111111] via-[#999999] to-[#111111]" />
-        <div className="relative md:w-[400px] lg:w-[900px] w-[150px] flex items-center justify-center">
+        <div className="relative md:w-[400px] lg:w-[900px] w-[180px] flex items-center justify-center">
           <PartnerLogos />
           <div className="absolute inset-0 bg-gradient-to-r from-[#111111] via-transparent to-[#111111]" />
         </div>

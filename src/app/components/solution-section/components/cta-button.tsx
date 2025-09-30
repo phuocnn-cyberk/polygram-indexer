@@ -10,7 +10,7 @@ export const CtaButton: FC = () => {
       target="_blank"
       rel="noopener noreferrer"
     >
-      <Button className="bg-[#2172E6] text-white uppercase cursor-pointer hover:bg-[#2172E6] hover:shadow-[0_0_25px_0_rgba(33,114,230,0.5)] font-semibold h-12 transition-all duration-300">
+      <Button className="bg-[#2172E6] text-white pl-2 uppercase cursor-pointer hover:bg-[#2172E6] hover:shadow-[0_0_25px_0_rgba(33,114,230,0.5)] font-semibold h-12 transition-all duration-300">
         <Image
           src="/icons//get-started-icon.svg"
           alt="arrow right"
