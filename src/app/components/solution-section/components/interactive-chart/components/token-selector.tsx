@@ -6,7 +6,7 @@ import Image from "next/image";
 const APTOS_TOKEN = {
   value: "apt",
   label: "Aptos",
-  icon: "/assets/icons/aptos.svg",
+  icon: "/icons//aptos.svg",
 };
 
 export const TokenSelector: FC = () => {
@@ -45,27 +45,27 @@ const TOKENS = [
   {
     value: "sol",
     label: "Solana",
-    icon: "/assets/icons/sol.svg",
+    icon: "/icons//sol.svg",
   },
   {
     value: "apt",
     label: "Aptos",
-    icon: "/assets/icons/aptos.svg",
+    icon: "/icons//aptos.svg",
   },
   {
     value: "eth",
     label: "Ethereum",
-    icon: "/assets/icons/ethereum.svg",
+    icon: "/icons//ethereum.svg",
   },
   {
     value: "bsc",
     label: "BNB Chain",
-    icon: "/assets/icons/binance-logo-white.svg",
+    icon: "/icons//binance-logo-white.svg",
   },
   {
     value: "base",
     label: "Base",
-    icon: "/assets/icons/base.svg",
+    icon: "/icons//base.svg",
   },
 ];
 

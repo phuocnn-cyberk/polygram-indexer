@@ -28,7 +28,7 @@ export const FaqItem: FC<FaqItemProps> = ({ question, answer, icon }) => {
           </p>
         </div>
         <Image
-          src="/assets/images/avatar.png"
+          src="/images/avatar.png"
           alt="FAQ Avatar"
           width={48}
           height={48}

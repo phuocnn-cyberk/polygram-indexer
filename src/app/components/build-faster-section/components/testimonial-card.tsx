@@ -15,7 +15,7 @@ export const TestimonialCard: FC<{
       <div className="flex items-center justify-between gap-2.5">
         <span className="text-xl font-bold text-white">Amaterasu</span>
         <Image
-          src="/assets/icons/amaterasu.svg"
+          src="/icons//amaterasu.svg"
           alt="Amaterasu"
           width={40}
           height={40}

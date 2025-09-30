@@ -7,7 +7,7 @@ export const Footer: FC = () => {
   return (
     <footer className="relative w-full overflow-hidden">
       <Image
-        src="/assets/images/footer-bg.png"
+        src="/images/footer-bg.png"
         alt="Footer Background"
         fill
         className="object-cover animate-slow-spin md:h-[930px] h-[413px]"

@@ -8,7 +8,7 @@ export const HeroSection: FC = () => {
   return (
     <div className="relative flex flex-col items-center text-center md:h-[600px] lg:h-[800px] h-[330px]">
       <Image
-        src="/assets/images/hero-background.png"
+        src="/images/hero-background.png"
         alt="Hero background"
         fill
         priority

@@ -15,7 +15,7 @@ import { ArrowDropUp } from "./arrow-drop-up";
 const NFT_COLLECTIONS = [
   {
     name: "CryptoPunks",
-    logo: "/assets/images/cryptopunks.png",
+    logo: "/images/cryptopunks.png",
     volume: 1213000,
     quantity: -15.23,
     avgTrade: 45000,
@@ -23,7 +23,7 @@ const NFT_COLLECTIONS = [
   },
   {
     name: "Bored Ape Yacht Club",
-    logo: "/assets/images/bored-ape-yacht-club.png",
+    logo: "/images/bored-ape-yacht-club.png",
     volume: 987000,
     quantity: 22.88,
     avgTrade: 29000,
@@ -31,7 +31,7 @@ const NFT_COLLECTIONS = [
   },
   {
     name: "Azuki",
-    logo: "/assets/images/azuki.png",
+    logo: "/images/azuki.png",
     volume: 876000,
     quantity: 12.45,
     avgTrade: 15000,
@@ -39,7 +39,7 @@ const NFT_COLLECTIONS = [
   },
   {
     name: "Doodles",
-    logo: "/assets/images/doodles.png",
+    logo: "/images/doodles.png",
     volume: 765000,
     quantity: -5.67,
     avgTrade: 8000,
@@ -47,7 +47,7 @@ const NFT_COLLECTIONS = [
   },
   {
     name: "Moonbirds",
-    logo: "/assets/images/moonbirds.png",
+    logo: "/images/moonbirds.png",
     volume: 654000,
     quantity: 33.12,
     avgTrade: 6000,
@@ -55,7 +55,7 @@ const NFT_COLLECTIONS = [
   },
   {
     name: "Pudgy Penguins",
-    logo: "/assets/images/pudgy-penguins.png",
+    logo: "/images/pudgy-penguins.png",
     volume: 543000,
     quantity: 8.79,
     avgTrade: 4500,
@@ -63,7 +63,7 @@ const NFT_COLLECTIONS = [
   },
   {
     name: "Cool Cats",
-    logo: "/assets/images/cool-cats.png",
+    logo: "/images/cool-cats.png",
     volume: 432000,
     quantity: -11.05,
     avgTrade: 3000,
@@ -71,7 +71,7 @@ const NFT_COLLECTIONS = [
   },
   {
     name: "VeeFriends",
-    logo: "/assets/images/vee-friends.png",
+    logo: "/images/vee-friends.png",
     volume: 321000,
     quantity: 18.91,
     avgTrade: 9000,
@@ -79,7 +79,7 @@ const NFT_COLLECTIONS = [
   },
   {
     name: "Meebits",
-    logo: "/assets/images/meebits.png",
+    logo: "/images/meebits.png",
     volume: 210000,
     quantity: -2.34,
     avgTrade: 4000,
@@ -87,7 +87,7 @@ const NFT_COLLECTIONS = [
   },
   {
     name: "World of Women",
-    logo: "/assets/images/world-of-women.png",
+    logo: "/images/world-of-women.png",
     volume: 198000,
     quantity: 25.55,
     avgTrade: 3500,

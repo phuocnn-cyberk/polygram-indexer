@@ -4,11 +4,11 @@ import { FadeIn } from "@/components/common/fade-in";
 import { FadeInBlock } from "@/components/common/fade-in-block";
 
 const LOGOS = [
-  { src: "/assets/icons/sol.svg", alt: "Solana" },
-  { src: "/assets/icons/aptos.svg", alt: "Aptos" },
-  { src: "/assets/icons/ethereum.svg", alt: "Ethereum" },
-  { src: "/assets/icons/binance-logo-white.svg", alt: "Binance" },
-  { src: "/assets/icons/base.svg", alt: "Base" },
+  { src: "/icons//sol.svg", alt: "Solana" },
+  { src: "/icons//aptos.svg", alt: "Aptos" },
+  { src: "/icons//ethereum.svg", alt: "Ethereum" },
+  { src: "/icons//binance-logo-white.svg", alt: "Binance" },
+  { src: "/icons//base.svg", alt: "Base" },
 ];
 
 export const Heading: FC = () => {

@@ -3,31 +3,31 @@ import Image from "next/image";
 
 const LOGO_LIST = [
   {
-    src: "/assets/images/partner-logos/kyros-ventures-logo.png",
+    src: "/images/partner-logos/kyros-ventures-logo.png",
     alt: "Kyros Ventures",
     width: 121,
     height: 68,
   },
   {
-    src: "/assets/images/partner-logos/caladanloho-logo.png",
+    src: "/images/partner-logos/caladanloho-logo.png",
     alt: "Caladan",
     width: 128,
     height: 72,
   },
   {
-    src: "/assets/images/partner-logos/presto-logo.png",
+    src: "/images/partner-logos/presto-logo.png",
     alt: "Presto",
     width: 142,
     height: 80,
   },
   {
-    src: "/assets/images/partner-logos/tribe-logo.png",
+    src: "/images/partner-logos/tribe-logo.png",
     alt: "Tribe",
     width: 142,
     height: 80,
   },
   {
-    src: "/assets/images/partner-logos/trive-logo.png",
+    src: "/images/partner-logos/trive-logo.png",
     alt: "Trive",
     width: 124,
     height: 48,

@@ -43,7 +43,7 @@ export const BlockchainGrid: FC = () => {
               <Stripes />
             ) : (
               <Image
-                src={`/assets/icons/${ICONS[iconIndex++ % ICONS.length]}.svg`}
+                src={`/icons//${ICONS[iconIndex++ % ICONS.length]}.svg`}
                 alt={item}
                 width={28}
                 height={28}

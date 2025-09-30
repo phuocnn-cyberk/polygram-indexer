@@ -10,21 +10,21 @@ const BENEFITS_DATA = [
     title: "Most Accurate Chart Data",
     description:
       "Everything you need to instantly generate precise and reliable pricing charts",
-    icon: "/assets/icons/benefits/benefit-icon-1.svg",
+    icon: "/icons//benefits/benefit-icon-1.svg",
     glowColor: "#CCCCCC",
   },
   {
     title: "Historical USD Pricing Data",
     description:
       "Query the exact value of every real-time or historical on-chain transaction",
-    icon: "/assets/icons/benefits/benefit-icon-2.svg",
+    icon: "/icons//benefits/benefit-icon-2.svg",
     glowColor: "#417EC0",
   },
   {
     title: "Real-Time Aggregate Data",
     description:
       "Instantly access volume, liquidity, unique wallets, and other vital on-chain metrics across multiple timeframes",
-    icon: "/assets/icons/benefits/benefit-icon-3.svg",
+    icon: "/icons//benefits/benefit-icon-3.svg",
     glowColor: "#BC7DFF",
   },
 ];

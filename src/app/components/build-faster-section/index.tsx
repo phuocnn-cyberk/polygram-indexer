@@ -32,7 +32,7 @@ export const BuildFasterSection: FC = () => {
   return (
     <section className="relative mt-20 h-[800px] w-full">
       <Image
-        src="/assets/images/build-faster-background.png"
+        src="/images/build-faster-background.png"
         alt="Get Started Background"
         fill
         className="object-cover hidden lg:block"
@@ -49,14 +49,20 @@ export const BuildFasterSection: FC = () => {
             low-latency, high-performance on-chain data in a single, easy-to-use
             API.
           </FadeInBlock>
-          <Button 
+          <Button
             className="mt-8 h-12 gap-4 bg-[#2172E6] px-4 uppercase text-white hover:bg-[#2172E6] hover:shadow-[0_0_25px_0_rgba(33,114,230,0.5)] cursor-pointer"
-            onClick={() => window.open('https://polygram-2.gitbook.io/polygram/', '_blank', 'noopener,noreferrer')}
+            onClick={() =>
+              window.open(
+                "https://polygram-2.gitbook.io/polygram/",
+                "_blank",
+                "noopener,noreferrer"
+              )
+            }
           >
             <span>Docs</span>
             <div className="flex h-8 w-8 items-center justify-center rounded bg-white">
               <Image
-                src="/assets/icons/arrow-right-sharp.svg"
+                src="/icons//arrow-right-sharp.svg"
                 alt="Arrow Right"
                 width={18}
                 height={18}

@@ -6,33 +6,33 @@ import { FC } from "react";
 
 const ICONS = [
   {
-    src: "/assets/icons/eth.svg",
+    src: "/icons//eth.svg",
     alt: "Ethereum",
     className: "absolute top-[20%] left-[25%] md:h-16 md:w-16 h-7 w-7",
   },
   {
-    src: "/assets/icons/polygon.svg",
+    src: "/icons//polygon.svg",
     alt: "Base",
     className: "absolute top-[15%] right-[27%] md:h-16 md:w-16 h-7 w-7",
   },
   {
-    src: "/assets/icons/binance-logo-dark.svg",
+    src: "/icons//binance-logo-dark.svg",
     alt: "Aptos",
     className:
       "absolute top-[34%] left-[3%] md:h-16 md:w-16 h-7 w-7 blur-[8px]",
   },
   {
-    src: "/assets/icons/sol.svg",
+    src: "/icons//sol.svg",
     alt: "Solana",
     className: "absolute top-[55%] left-[23%] md:h-16 md:w-16 h-7 w-7",
   },
   {
-    src: "/assets/icons/binance-logo-dark.svg",
+    src: "/icons//binance-logo-dark.svg",
     alt: "Binance",
     className: "absolute top-[47%] right-[32%] md:h-16 md:w-16 h-7 w-7",
   },
   {
-    src: "/assets/icons/base.svg",
+    src: "/icons//base.svg",
     alt: "Polygon",
     className:
       "absolute bottom-[63%] right-[5%] md:h-16 md:w-16 h-7 w-7 blur-[8px]",

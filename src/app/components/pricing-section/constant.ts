@@ -1,7 +1,7 @@
 export const PRICING_PLANS = [
   {
     name: "FREE PLAN",
-    icon: "/assets/icons/free-plan-icon.svg",
+    icon: "/icons//free-plan-icon.svg",
     description: "Perfect for individuals with simple needs.",
     price: "$0",
     priceDescription: "per million requests",
@@ -16,7 +16,7 @@ export const PRICING_PLANS = [
   },
   {
     name: "PRO PLAN",
-    icon: "/assets/icons/pro-plan-icon.svg",
+    icon: "/icons//pro-plan-icon.svg",
     description: "Best for teams & startups",
     price: "$200",
     priceDescription: "per million requests",
@@ -34,7 +34,7 @@ export const PRICING_PLANS = [
   },
   {
     name: "ENTERPRISE PLAN",
-    icon: "/assets/icons/enterprise-plan-icon.svg",
+    icon: "/icons//enterprise-plan-icon.svg",
     description: "Tailored solutions for large companies",
     price: "Custom",
     priceDescription: "per million requests",
