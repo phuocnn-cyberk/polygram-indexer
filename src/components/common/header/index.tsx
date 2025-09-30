@@ -137,7 +137,7 @@ export const Header: FC = () => {
                 rel="noopener noreferrer"
                 className="w-full"
               >
-                <Button className="w-full bg-[#2172E6] font-bold text-white">
+                <Button className="w-full bg-[#2172E6] font-semibold text-white">
                   Get started
                 </Button>
               </Link>
