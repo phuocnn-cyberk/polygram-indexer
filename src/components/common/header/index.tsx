@@ -77,9 +77,14 @@ export const Header: FC = () => {
       </Link>
       <div className="hidden lg:flex items-center">
         <nav className="flex items-center bg-[#18181A] rounded-lg p-2">
-          {MENU_LIST.map((item) => (
-            item.path.startsWith('http') ? (
-              <a key={item.label} href={item.path} target="_blank" rel="noopener noreferrer">
+          {MENU_LIST.map((item) =>
+            item.path.startsWith("http") ? (
+              <a
+                key={item.label}
+                href={item.path}
+                target="_blank"
+                rel="noopener noreferrer"
+              >
                 <MenuItem>{item.label}</MenuItem>
               </a>
             ) : (
@@ -87,10 +92,16 @@ export const Header: FC = () => {
                 <MenuItem>{item.label}</MenuItem>
               </Link>
             )
-          ))}
-          <Button className="bg-[#2172E6] text-base h-10 btn-discover hover:text-black text-white">
-            Get started
-          </Button>
+          )}
+          <Link
+            href="https://polygram-2.gitbook.io/polygram/"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <Button className="bg-[#2172E6] text-base h-10 btn-discover hover:text-black text-white">
+              Get started
+            </Button>
+          </Link>
         </nav>
       </div>
       <div className="lg:hidden">
@@ -103,8 +114,13 @@ export const Header: FC = () => {
           <DropdownMenuContent className="mr-4 w-56 border-none bg-[#18181A] text-white">
             {MENU_LIST.map((item) => (
               <DropdownMenuItem key={item.label} asChild>
-                {item.path.startsWith('http') ? (
-                  <a href={item.path} target="_blank" rel="noopener noreferrer" className="w-full">
+                {item.path.startsWith("http") ? (
+                  <a
+                    href={item.path}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="w-full"
+                  >
                     {item.label}
                   </a>
                 ) : (
@@ -115,9 +131,16 @@ export const Header: FC = () => {
               </DropdownMenuItem>
             ))}
             <DropdownMenuItem>
-              <Button className="w-full bg-[#2172E6] font-bold text-white">
-                Get started
-              </Button>
+              <Link
+                href="https://polygram-2.gitbook.io/polygram/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="w-full"
+              >
+                <Button className="w-full bg-[#2172E6] font-bold text-white">
+                  Get started
+                </Button>
+              </Link>
             </DropdownMenuItem>
           </DropdownMenuContent>
         </DropdownMenu>
