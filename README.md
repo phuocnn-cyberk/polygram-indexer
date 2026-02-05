@@ -1,24 +1,52 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Polygram Indexer
+
+Polygram Indexer là một nền tảng blockchain indexing hiện đại được xây dựng với Next.js, cung cấp giải pháp indexing không cần đau đầu cho các blockchain protocols.
+
+## Tính năng
+
+- 🚀 **Blockchain Indexing**: Hỗ trợ indexing cho nhiều blockchain protocols
+- 📊 **Real-time Analytics**: Phân tích dữ liệu real-time
+- 💳 **Payment Integration**: Tích hợp Stripe cho thanh toán
+- 🎨 **Modern UI**: Giao diện hiện đại với Tailwind CSS
+- ⚡ **Performance**: Tối ưu hiệu suất với Next.js 15
+
+## Tech Stack
+
+- **Framework**: Next.js 15.5.3
+- **UI Library**: React 19
+- **Styling**: Tailwind CSS 4
+- **Payment**: Stripe
+- **Animations**: Motion (Framer Motion)
+- **Charts**: Recharts
 
 ## Getting Started
 
-First, run the development server:
+First, install dependencies:
 
 ```bash
-npm run dev
-# or
-yarn dev
-# or
+pnpm install
+```
+
+Then, run the development server:
+
+```bash
 pnpm dev
-# or
-bun dev
 ```
 
 Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## Project Structure
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+```
+src/
+├── app/              # Next.js app directory
+│   ├── components/   # Page components
+│   └── page.tsx      # Home page
+├── components/       # Shared components
+│   ├── common/      # Common UI components
+│   └── ui/          # UI primitives
+└── lib/             # Utilities and helpers
+```
 
 ## Learn More
 
@@ -26,8 +54,6 @@ To learn more about Next.js, take a look at the following resources:
 
 - [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
 - [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
 
 ## Deploy on Vercel
 
